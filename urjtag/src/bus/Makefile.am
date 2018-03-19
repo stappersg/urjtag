@@ -35,6 +35,10 @@ libbus_la_SOURCES = \
 	readmem.c \
 	writemem.c
 
+if ENABLE_BUS_AHBJTAG
+libbus_la_SOURCES += ahbjtag.c
+endif
+
 if ENABLE_BUS_ARM9TDMI
 libbus_la_SOURCES += arm9tdmi.c
 endif

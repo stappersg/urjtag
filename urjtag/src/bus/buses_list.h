@@ -27,6 +27,9 @@
  * Please keep this list sorted alphabetically
  */
 
+#ifdef ENABLE_BUS_AHBJTAG
+_URJ_BUS(ahbjtag)
+#endif
 #ifdef ENABLE_BUS_ARM9TDMI
 _URJ_BUS(arm9tdmi)
 #endif

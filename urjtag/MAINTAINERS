@@ -21,6 +21,11 @@ S: Status, one of the following:
                         it has been replaced by a better system and you
                         should be using that.
 
+AHBJTAG FPGA JTAG MEMORY BUS DRIVER
+M:      Jiri Gaisler <jiri@gaisler.se>
+F:      src/bus/ahbjtag.c
+S:      Maintained
+
 
 ALTERA UP3 EDUCATION KIT BUS DRIVER
 F:      src/bus/slsup3.c

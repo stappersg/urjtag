@@ -619,6 +619,7 @@ m4_ifnblank([$3], [
 
 # Enable bus drivers
 URJ_DRIVER_SET([bus], [
+	ahbjtag
 	arm9tdmi
 	au1500
 	avr32
