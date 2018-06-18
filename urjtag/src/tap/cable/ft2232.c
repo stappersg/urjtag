@@ -480,7 +480,7 @@ ft2232_armusbocd_init_common (urj_cable_t *cable, int is_ft2232h)
        TSRST = 1
        RED LED on */
     params->high_byte_value = BITMASK_ARMUSBOCD_nTRST
-        | BITMASK_ARMUSBOCD_nTSRST | BITMASK_ARMUSBOCD_RED_LED;
+        | BITMASK_ARMUSBOCD_RED_LED;
     params->high_byte_dir = BITMASK_ARMUSBOCD_nTRST
         | BITMASK_ARMUSBOCD_nTRST_nOE
         | BITMASK_ARMUSBOCD_nTSRST | BITMASK_ARMUSBOCD_RED_LED;
@@ -490,6 +490,10 @@ ft2232_armusbocd_init_common (urj_cable_t *cable, int is_ft2232h)
     urj_tap_cable_cx_cmd_push (cmd_root, SET_BITS_HIGH);
     urj_tap_cable_cx_cmd_push (cmd_root, params->high_byte_value);
     urj_tap_cable_cx_cmd_push (cmd_root, params->high_byte_dir);
+    // from openOCD
+    urj_tap_cable_cx_cmd_push (cmd_root, 0x85); // no loop back
+    urj_tap_cable_cx_cmd_push (cmd_root, 0x97); // no adaptive
+    urj_tap_cable_cx_cmd_push (cmd_root, 0x8a); // no div by 5
 
     if (is_ft2232h)
         ft2232h_set_frequency (cable, FT2232H_MAX_TCK_FREQ);
