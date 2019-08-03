@@ -918,9 +918,9 @@ urj_vhdl_set_entity (urj_vhdl_parser_priv_t *priv, char *entityname)
 {
     if (priv->jtag_ctrl->proc_mode & URJ_BSDL_MODE_INSTR_EXEC)
     {
-        strncpy (priv->jtag_ctrl->part->part, entityname,
+        strncpy (priv->jtag_ctrl->part->part_name, entityname,
                  URJ_PART_PART_MAXLEN);
-        priv->jtag_ctrl->part->part[URJ_PART_PART_MAXLEN] = '\0';
+        priv->jtag_ctrl->part->part_name[URJ_PART_PART_MAXLEN] = '\0';
     }
 
     free (entityname);

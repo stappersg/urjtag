@@ -131,7 +131,7 @@ part_scan_select (urj_chain_t *chain, int n, int scan)
     if (part->active_instruction == NULL)
     {
         urj_log (URJ_LOG_LEVEL_ERROR,
-                 _("%s: unknown instruction '%s'\n"), part->part, scans[scan]);
+                 _("%s: unknown instruction '%s'\n"), part->part_name, scans[scan]);
         return -1;
     }
 

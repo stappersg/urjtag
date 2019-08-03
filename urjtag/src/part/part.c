@@ -52,8 +52,8 @@ urj_part_alloc (const urj_tap_register_t *id)
     p->alias = NULL;            /* djf */
     /* @@@@ RFHH check result */
     p->id = urj_tap_register_duplicate (id);
-    p->manufacturer[0] = '\0';
-    p->part[0] = '\0';
+    p->manufacturer_name[0] = '\0';
+    p->part_name[0] = '\0';
     p->stepping[0] = '\0';
     p->signals = NULL;
     p->saliases = NULL;
@@ -319,7 +319,7 @@ urj_part_print (urj_log_level_t ll, urj_part_t *p)
         instruction = _("(none)");
     if (dr == NULL)
         dr = _("(none)");
-    urj_log (ll, format, p->manufacturer, p->part, p->stepping, instruction,
+    urj_log (ll, format, p->manufacturer_name, p->part_name, p->stepping, instruction,
              dr);
 
     return URJ_STATUS_OK;

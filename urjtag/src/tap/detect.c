@@ -419,8 +419,8 @@ urj_tap_detect_parts (urj_chain_t *chain, const char *db_path, int maxirlen)
                      data_path);
 
             /* run JTAG declarations */
-            strcpy (part->manufacturer, manufacturer);
-            strcpy (part->part, partname);
+            strcpy (part->manufacturer_name, manufacturer);
+            strcpy (part->part_name, partname);
             strcpy (part->stepping, stepping);
             if (urj_parse_include (chain, data_path, 1) == URJ_STATUS_FAIL)
                 urj_log_error_describe (URJ_LOG_LEVEL_ERROR);
@@ -434,7 +434,7 @@ urj_tap_detect_parts (urj_chain_t *chain, const char *db_path, int maxirlen)
                                                                   "IDCODE");
         
         /* Do part specific initialization.  */
-        part_init_func = urj_part_find_init (part->part);
+        part_init_func = urj_part_find_init (part->part_name);
         if (part_init_func)
         {
             part->params = malloc (sizeof (urj_part_params_t));
@@ -496,7 +496,7 @@ urj_tap_manual_add (urj_chain_t *chain, int instr_len)
     if (part == NULL)
         return -1;
 
-    strncpy (part->part, "unknown", URJ_PART_PART_MAXLEN);
+    strncpy (part->part_name, "unknown", URJ_PART_PART_MAXLEN);
     part->instruction_length = instr_len;
 
     urj_part_parts_add_part (chain->parts, part);

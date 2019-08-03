@@ -42,8 +42,8 @@ struct URJ_PART
 {
     urj_tap_register_t *id;
     char *alias;                /* djf refdes */
-    char manufacturer[URJ_PART_MANUFACTURER_MAXLEN + 1];
-    char part[URJ_PART_PART_MAXLEN + 1];
+    char manufacturer_name[URJ_PART_MANUFACTURER_MAXLEN + 1];
+    char part_name[URJ_PART_PART_MAXLEN + 1];
     char stepping[URJ_PART_STEPPING_MAXLEN + 1];
     urj_part_signal_t *signals;
     urj_part_salias_t *saliases;
