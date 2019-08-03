@@ -28,7 +28,7 @@
 #
 # Documentation:
 # [1] JEDEC Solid State Technology Association, "Standard Manufacturer's
-#     Identification Code", September 2001, Order Number: JEP106-K
+#     Identification Code", Order Number: JEP106
 #
 
 # bits 11-1 of the Device Identification Register
