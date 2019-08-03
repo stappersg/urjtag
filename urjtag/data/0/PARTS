@@ -1,0 +1,15 @@
+#
+#
+#  a placeholder
+#  for telling what to do next
+#
+#  Please report your part to the UrJTAG project
+#  and ask for inclusion in the source tree.
+#
+#
+
+# bits 27-12 of the Device Identification Register
+## column 2 is a filename
+### column 3 is a multi word descriptive text
+0000000000000000	foo		A Placeholder
+1111111111111111	bar		You Get the idea
