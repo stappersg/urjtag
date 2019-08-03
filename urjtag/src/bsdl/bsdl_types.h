@@ -157,10 +157,12 @@ typedef struct jtag_ctrl urj_bsdl_jtag_ctrl_t;
 
 /* private data of the VHDL bison parser
    used to store variables the would end up as globals otherwise */
+#define VHDL_PARSER_ENTITY_NAME_MAXLEN            20
 struct vhdl_parser_priv
 {
     char Package_File_Name[100];
     int Reading_Package;
+    char entity_name[VHDL_PARSER_ENTITY_NAME_MAXLEN+1];
     char *buffer;
     size_t len_buffer;
     void *scanner;
