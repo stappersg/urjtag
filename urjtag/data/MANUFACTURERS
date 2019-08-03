@@ -41,9 +41,15 @@
 ## column 2 is a directory name in the data directory where this file resides
 ### column 3 is multi word and is a descriptive text of a manufacturer
 00000000001	amd		AMD
+00000000010	0 		AMI
+00000000011	0		Fairchild
+00000000100	0		Fujitsu
+00000000101	0		GTE
 00000000110	lexra		Lexr
 00000000111	hitachi		Hitachi
+00000001000	0		Inmos
 00000001001	intel		Intel
+00000001010	0		I.T.T.
 00000001110	freescale	Freescale (Motorola)
 00000010101	philips		Philips Semi. (Signetics)
 00000010111	ti		Texas Instruments
@@ -63,5 +69,14 @@
 00101110000	brecis		Brecis (PMC-Sierra)
 00111101001	marvell		Marvell
 00110101011	marvell		Marvell
-# collides with other ARM-based chips
-#11110000111	arm  		ARM
+10000000111	0		Shenzhen Jinge Information Co. Ltd.
+10000011111	0		Shenzhen City Gcai Electronics
+10000100100	0		Shenzhen Elicks Technology
+10001001001	0		Shenzhen Zhongteng Electronic Corp. Ltd.
+10001001100	0		Shenzhen Pango Microsystems Co. Ltd
+10001100111	0		Shenzhen Mic Electronics Technology
+10010001011	0		Paragon Technology (Shenzhen) Ltd.
+10010001101	0		Shenzhen Yong Sheng Technology
+10010001110	0		SNOAMOO (Shenzhen Kai Zhuo Yue)
+10010010000	0		Shenzhen XinRuiYan Electronics
+10010010100	0		Shenzhen Chixingzhe Tech Co. Ltd.
