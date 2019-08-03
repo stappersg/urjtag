@@ -30,6 +30,12 @@
 # [1] JEDEC Solid State Technology Association, "Standard Manufacturer's
 #     Identification Code", Order Number: JEP106
 #
+# You can download the list from:
+#  http://www.jedec.org/standards-documents/results/jep106
+# in pdf format. Openocd uses
+#  https://sourceforge.net/p/openocd/code/ci/master/tree/src/helper/update_jep106.pl
+# to extract the ids
+#
 
 # bits 11-1 of the Device Identification Register
 ## column 2 is a directory name in the data directory where this file resides
