@@ -27,6 +27,8 @@
 #
 
 # bits 11-1 of the Device Identification Register
+## column 2 is a directory name in the data directory where this file resides
+### column 3 is multi word and is a descriptive text of a manufacturer
 00000000110	lexra		Lexr
 00000000111	hitachi		Hitachi
 00000001001	intel		Intel
