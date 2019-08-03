@@ -1,4 +1,5 @@
 2019-08-03 Karl Hammer <karl@aspodata.se>
+ * vhdl functions shouldn't know anything about part
  * Disambiguate part
 
 2018-09-21 Geert Stappers <stappers@stappers.it>
