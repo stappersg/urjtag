@@ -1,3 +1,9 @@
+2019-08-03 Geert Stappers <stappers@stappers.it>
+ * data/MANUFACTURERS got update information
+ * minor data/MANUFACTURERS update
+ * Added an empty data/amd/PARTS as reservation for AMD
+ * Added an empty data/0/PARTS for further JEP106 support
+
 2019-08-03 Karl Hammer <karl@aspodata.se>
  * vhdl functions shouldn't know anything about part
  * Disambiguate part
