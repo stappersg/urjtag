@@ -47,7 +47,11 @@ if test "$SVN_REVISION" -eq 0; then
     SVN_REVISION=`git log -n1 --pretty=format:%b 2>/dev/null | sed -n '/^git-svn-id:/{s:.*@::;s: .*::;p}'`
     SVN_FROM="git-svn log"
 fi
-if test "$SVN_REVISION" -eq "0" ; then
+if test "$SVN_REVISION" = "0" -o -z "$SVN_REVISION"; then
+    SVN_REVISION=`git log -n1 --pretty=format:%h 2>/dev/null`
+    SVN_FROM="git log hash"
+fi
+if test "$SVN_REVISION" = "0" -o -z "$SVN_REVISION" ; then
     AC_MSG_RESULT([unknown, using 0])
 else
     AC_MSG_RESULT([from $SVN_FROM: $SVN_REVISION])
