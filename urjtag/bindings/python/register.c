@@ -54,7 +54,7 @@ urj_pyr_str (PyObject *s)
     else
         snprintf (buf, 200, "<urjtag.register chain=%p reg=%s inst=%s>", urc, 
              self->urreg->name, self->inst->name);
-    return PyString_FromString (buf);
+    return PyUnicode_FromString (buf);
 }
 
 

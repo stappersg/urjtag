@@ -2,6 +2,7 @@
  * Removed '$Id$' markers for src/bus/*.c
  * Removed editor hints from src/bus/*.c
  * Removed spurious '#undef DEBUG' from two src/bus/*.c files
+ * Applied Python3 binding fix reported on SF forum
 
 2019-12-03 Jiri Gaisler <jiri@gaisler.se>
  * Define stepping 0 for Xilinx xc6slx75 FPGA
