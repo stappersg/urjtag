@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Bus driver for the GRLIB AHBJTAG core.
  *
  * This program is free software; you can redistribute it and/or
@@ -322,12 +320,3 @@ const urj_bus_driver_t urj_bus_ahbjtag_bus = {
     urj_bus_generic_no_disable,
     URJ_BUS_TYPE_PARALLEL,
 };
-
-
-/*
- Local Variables:
- mode:C
- tab-width:2
- indent-tabs-mode:t
- End:
-*/

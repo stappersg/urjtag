@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * AVR32 multi-mode bus driver
  *
  * Copyright (c) 2008 Gabor Juhos <juhosg@openwrt.org>

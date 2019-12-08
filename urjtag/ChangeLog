@@ -1,3 +1,7 @@
+2019-12-08 Geert Stappers <stappers@stappers.it>
+ * Removed '$Id$' markers for src/bus/*.c
+ * Removed editor hints from src/bus/*.c
+
 2019-12-03 Jiri Gaisler <jiri@gaisler.se>
  * Define stepping 0 for Xilinx xc6slx75 FPGA
  * src/bus/ahbjtag.c: New file. Implements bus driver for GRLIB AHBJTAG core.

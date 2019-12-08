@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Generic bus driver utility functions
  *
  * This program is free software; you can redistribute it and/or

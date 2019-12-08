@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Bus driver for the FPGA JTAG memory (fjmem) design.
  *
  * This program is free software; you can redistribute it and/or
@@ -748,12 +746,3 @@ const urj_bus_driver_t urj_bus_fjmem_bus = {
     urj_bus_generic_no_disable,
     URJ_BUS_TYPE_PARALLEL,
 };
-
-
-/*
- Local Variables:
- mode:C
- tab-width:2
- indent-tabs-mode:t
- End:
-*/

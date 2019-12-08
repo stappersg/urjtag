@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Analog Devices unified Blackfin bus functions
  *
  * Copyright (C) 2008-2011 Analog Devices, Inc.

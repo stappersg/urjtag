@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Analog Devices ADSP-BF561 EZ-KIT Lite bus driver
  * Copyright (C) 2008-2011 Analog Devices, Inc.
  *

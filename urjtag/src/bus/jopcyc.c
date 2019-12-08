@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Bus driver for the Cyclone Boards manufactured by JOP.design.
  *
  *   http://www.jopdesign.com/
@@ -708,12 +706,3 @@ const urj_bus_driver_t urj_bus_jopcyc_bus = {
     urj_bus_generic_no_disable,
     URJ_BUS_TYPE_PARALLEL,
 };
-
-
-/*
- Local Variables:
- mode:C
- tab-width:2
- indent-tabs-mode:t
- End:
-*/

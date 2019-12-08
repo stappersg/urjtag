@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Motorola MPC824x compatible bus driver via BSR
  * Copyright (C) 2003 Marcel Telka
  *

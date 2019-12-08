@@ -1,6 +1,4 @@
 /*
- * $Id: mpc8313.c 1653 2009-06-15 20:19:43Z arniml $
- *
  * Freescale mpc8313 compatible bus driver via BSR
  * Copyright (C) 2011 Miklós Márton
  *

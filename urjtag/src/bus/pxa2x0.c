@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Intel PXA2x0 compatible bus driver via BSR
  * Copyright (C) 2002, 2003 ETC s.r.o.
  *

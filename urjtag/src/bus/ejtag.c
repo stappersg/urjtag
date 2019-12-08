@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * EJTAG compatible bus driver via PrAcc
  * Copyright (C) 2005, Marek Michalkiewicz
  *

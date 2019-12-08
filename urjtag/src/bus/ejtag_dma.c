@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * EJTAG compatible bus driver via DMA
  * Copyright (C) 2008, Julien Aube
  * Credits goes to

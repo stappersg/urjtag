@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Copyright (C) 2002, 2003 ETC s.r.o.
  *
  * This program is free software; you can redistribute it and/or

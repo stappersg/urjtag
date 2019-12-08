@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * ARM9TDMI core bus driver
  * Copyright (C) 2003, Rongkai zhan <zhanrk@163.com>
  * Copyright (C) 2009, Jochen Friedrich <jochen@scram.de>

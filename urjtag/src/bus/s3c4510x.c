@@ -1,8 +1,6 @@
 /**
 **  @file s3c4510x.c
 **
-**  $Id$
-**
 **  Copyright (C) 2003, All Rights Reserved
 **
 **  This program is free software; you can redistribute it and/or

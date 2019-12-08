@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Altera UP3 Education Kit bus driver via BSR
  * Copyright (C) 2005 Kent Palmkvist
  *

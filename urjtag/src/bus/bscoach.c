@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Busdriver for flashaccess on the Goepel "Boundary Scan Coach" training board
  * www.goepel.com
  * The flash has 1Mbit but only 15 address lines are connected.

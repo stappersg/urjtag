@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Analog Device's SHARC 21369 compatible bus driver via BSR
  * Copyright (C) 2009- Monami Software Limited Partnership, JAPAN.
  *

@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Freescale MPC5200 compatible bus driver via BSR
  * Copyright (C) 2003 Marcel Telka
  *

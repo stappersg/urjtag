@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Bus driver for the Zefant-XS3 Board manufactured by Simple Solutions.
  *
  *   http://www.zefant.de/
@@ -1002,12 +1000,3 @@ const urj_bus_driver_t urj_bus_zefant_xs3_bus = {
     urj_bus_generic_no_disable,
     URJ_BUS_TYPE_PARALLEL,
 };
-
-
-/*
- Local Variables:
- mode:C
- tab-width:2
- indent-tabs-mode:t
- End:
-*/
