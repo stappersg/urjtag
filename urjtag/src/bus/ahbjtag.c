@@ -40,8 +40,6 @@
 #include "buses.h"
 #include "generic_bus.h"
 
-#undef DEBUG
-
 #define AHBJTAG_ADDR_NAME "AINST"
 #define AHBJTAG_AREG_NAME "ADDR"
 #define AHBJTAG_DATA_NAME "DINST"

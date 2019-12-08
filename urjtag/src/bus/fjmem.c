@@ -39,8 +39,6 @@
 #include "buses.h"
 #include "generic_bus.h"
 
-#undef DEBUG
-
 #define FJMEM_INST_NAME "FJMEM_INST"
 #define FJMEM_REG_NAME  "FJMEM_REG"
 #define FJMEM_MAX_REG_LEN 2048
