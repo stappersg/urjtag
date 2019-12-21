@@ -1,5 +1,21 @@
 $Id$
 
+urjtag-2019.12
+
+ * Disambiguate part
+ * vhdl functions shouldn't know anything about part
+ * Added an empty data/0/PARTS for further JEP106 support
+ * Added an empty data/amd/PARTS as reservation for AMD
+ * minor data/MANUFACTURERS update
+ * data/MANUFACTURERS got update information
+ * git log hash as version number
+ * src/bus/ahbjtag.c: New file. Implements bus driver for GRLIB AHBJTAG core.
+ * Define stepping 0 for Xilinx xc6slx75 FPGA
+ * Applied Python3 binding fix reported on SF forum
+ * Removed spurious '#undef DEBUG' from two src/bus/*.c files
+ * Removed editor hints from src/bus/*.c
+ * Removed '$Id$' markers for src/bus/*.c
+
 urjtag-2018.09
 
  * Added J-Link interface select, closes bug#127
