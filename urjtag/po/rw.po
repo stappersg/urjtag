@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jtag 0.5.1\n"
 "Report-Msgid-Bugs-To: marcel@telka.sk\n"
-"POT-Creation-Date: 2018-09-21 23:32+0200\n"
+"POT-Creation-Date: 2019-12-21 21:07+0100\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -361,61 +361,61 @@ msgstr ""
 msgid "Too many errors"
 msgstr ""
 
-#: src/bus/arm9tdmi.c:89
+#: src/bus/arm9tdmi.c:87
 #, fuzzy, c-format
 msgid "ARM9TDMI compatible bus driver (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/arm9tdmi.c:369
+#: src/bus/arm9tdmi.c:367
 #, fuzzy
 msgid "SCANN register"
 msgstr "Kwiyandikisha"
 
-#: src/bus/arm9tdmi.c:375
+#: src/bus/arm9tdmi.c:373
 #, fuzzy
 msgid "SCAN1 register"
 msgstr "Kwiyandikisha"
 
-#: src/bus/arm9tdmi.c:381
+#: src/bus/arm9tdmi.c:379
 #, fuzzy
 msgid "SCAN2 register"
 msgstr "Kwiyandikisha"
 
-#: src/bus/arm9tdmi.c:420 src/bus/ejtag.c:551
+#: src/bus/arm9tdmi.c:418 src/bus/ejtag.c:549
 #, c-format
 msgid "Failed to enter debug mode, ctrl=%s"
 msgstr ""
 
-#: src/bus/arm9tdmi.c:426
+#: src/bus/arm9tdmi.c:424
 msgid "The target is halted in "
 msgstr ""
 
-#: src/bus/arm9tdmi.c:428
+#: src/bus/arm9tdmi.c:426
 msgid "THUMB mode.\n"
 msgstr ""
 
-#: src/bus/arm9tdmi.c:430
+#: src/bus/arm9tdmi.c:428
 msgid "ARM mode.\n"
 msgstr ""
 
-#: src/bus/arm9tdmi.c:555
+#: src/bus/arm9tdmi.c:553
 #, fuzzy
 msgid "ARM9TDMI compatible bus driver"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/au1500.c:124
+#: src/bus/au1500.c:122
 #, fuzzy, c-format
 msgid "AU1500 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/au1500.c:301
+#: src/bus/au1500.c:299
 msgid "AU1500 BUS Driver via BSR"
 msgstr ""
 
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
-#: src/bus/avr32.c:153
+#: src/bus/avr32.c:151
 #, fuzzy, c-format
 msgid "%s: instr=%s\n"
 msgstr "%-13s%s"
@@ -423,7 +423,7 @@ msgstr "%-13s%s"
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
-#: src/bus/avr32.c:158
+#: src/bus/avr32.c:156
 #, fuzzy, c-format
 msgid "%s: ret=%s\n"
 msgstr "%-13s%s"
@@ -431,17 +431,17 @@ msgstr "%-13s%s"
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
-#: src/bus/avr32.c:172
+#: src/bus/avr32.c:170
 #, fuzzy, c-format
 msgid "%s: data=%s\n"
 msgstr "%-13s%s"
 
-#: src/bus/avr32.c:175
+#: src/bus/avr32.c:173
 #, c-format
 msgid "%s: data out=%s\n"
 msgstr ""
 
-#: src/bus/avr32.c:196
+#: src/bus/avr32.c:194
 #, c-format
 msgid "%s: slave=%01x, addr=%08lx, %s\n"
 msgstr ""
@@ -449,38 +449,38 @@ msgstr ""
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
-#: src/bus/avr32.c:222 src/bus/avr32.c:248 src/bus/avr32.c:322
-#: src/bus/avr32.c:334
+#: src/bus/avr32.c:220 src/bus/avr32.c:246 src/bus/avr32.c:320
+#: src/bus/avr32.c:332
 #, fuzzy, c-format
 msgid "%s: data=%08lx\n"
 msgstr "%-13s%s"
 
-#: src/bus/avr32.c:292
+#: src/bus/avr32.c:290
 #, fuzzy, c-format
 msgid "%s: addr=%08lx, mode=%s\n"
 msgstr "Aderesi"
 
-#: src/bus/avr32.c:383
+#: src/bus/avr32.c:381
 #, fuzzy, c-format
 msgid "%s: read status %08lx\n"
 msgstr "%s:Leta"
 
-#: src/bus/avr32.c:417
+#: src/bus/avr32.c:415
 #, fuzzy, c-format
 msgid "%s: status=%08lx\n"
 msgstr "%s:Leta"
 
-#: src/bus/avr32.c:613
+#: src/bus/avr32.c:611
 #, fuzzy, c-format
 msgid "AVR32 multi-mode bus driver (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/avr32.c:695
+#: src/bus/avr32.c:693
 #, fuzzy, c-format
 msgid "%s:addr=%08lx\n"
 msgstr "Aderesi"
 
-#: src/bus/avr32.c:806
+#: src/bus/avr32.c:804
 msgid ""
 "Atmel AVR32 multi-mode bus driver, requires <mode> parameter\n"
 "           valid <mode> parameters:\n"
@@ -494,173 +494,173 @@ msgid ""
 "               HSBU: 32 bit bus for the uncached HSB area, via SAB"
 msgstr ""
 
-#: src/bus/bcm1250.c:115
+#: src/bus/bcm1250.c:113
 #, fuzzy, c-format
 msgid "Broadcom BCM1250 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/bcm1250.c:525
+#: src/bus/bcm1250.c:523
 #, fuzzy
 msgid "Broadcom BCM1250 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/bscoach.c:137
+#: src/bus/bscoach.c:135
 #, fuzzy, c-format
 msgid ""
 "Goepel electronic Boundary Scan Coach compatible bus driver via BSR (JTAG "
 "part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/bscoach.c:378
+#: src/bus/bscoach.c:376
 msgid ""
 "Goepel Boundary Scan Coach compatible bus driver for flash programming via "
 "BSR"
 msgstr ""
 
-#: src/bus/buses.c:76 src/bus/buses.c:113
+#: src/bus/buses.c:74 src/bus/buses.c:111
 #, c-format
 msgid "realloc(%s,%zd) fails"
 msgstr ""
 
-#: src/bus/buses.c:136
+#: src/bus/buses.c:134
 #, fuzzy
 msgid "invalid bus number"
 msgstr "%s:Sibyo"
 
-#: src/bus/buses.c:216
+#: src/bus/buses.c:214
 #, fuzzy, c-format
 msgid "Initialized bus %d, active bus %d\n"
 msgstr "gutangiza Musomyi: kugirango Gikora"
 
-#: src/bus/ejtag.c:137
+#: src/bus/ejtag.c:135
 #, fuzzy, c-format
 msgid "EJTAG compatible bus driver via PrAcc (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/ejtag.c:168
+#: src/bus/ejtag.c:166
 msgid "EJADDRESS, EJDATA or EJCONTROL register not found"
 msgstr ""
 
-#: src/bus/ejtag.c:189
+#: src/bus/ejtag.c:187
 #, c-format
 msgid "Reset occurred, ctrl=%s"
 msgstr ""
 
-#: src/bus/ejtag.c:196
+#: src/bus/ejtag.c:194
 #, c-format
 msgid "No processor access, ctrl=%s"
 msgstr ""
 
-#: src/bus/ejtag.c:210
+#: src/bus/ejtag.c:208
 #, c-format
 msgid "PrAcc bad alignment: addr=0x%08lx"
 msgstr ""
 
-#: src/bus/ejtag.c:225
+#: src/bus/ejtag.c:223
 #, c-format
 msgid "%s(%d) PrAcc write: addr=0x%08lx data=0x%08lx\n"
 msgstr ""
 
-#: src/bus/ejtag.c:236
+#: src/bus/ejtag.c:234
 #, c-format
 msgid "Unknown write addr=0x%08lx data=0x%08lx"
 msgstr ""
 
-#: src/bus/ejtag.c:296
+#: src/bus/ejtag.c:294
 msgid "EJCONTROL or EJIMPCODE register not found"
 msgstr ""
 
-#: src/bus/ejtag.c:358
+#: src/bus/ejtag.c:356
 msgid "EJADDRESS or EJDATA register not found"
 msgstr ""
 
-#: src/bus/ejtag.c:766
+#: src/bus/ejtag.c:764
 #, fuzzy
 msgid "EJTAG compatible bus driver via PrAcc"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/fjmem.c:108 src/part/part.c:355
+#: src/bus/fjmem.c:104 src/part/part.c:355
 #, fuzzy
 msgid "invalid instruction length"
 msgstr "Sibyo"
 
-#: src/bus/fjmem.c:397
+#: src/bus/fjmem.c:393
 msgid "Parameter for instruction opcode missing"
 msgstr ""
 
-#: src/bus/fjmem.c:475
+#: src/bus/fjmem.c:471
 #, fuzzy, c-format
 msgid "fjmem FPGA bus driver via USER register (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/fjmem.c:610 src/bus/fjmem.c:645 src/bus/fjmem.c:680
-#: src/bus/fjmem.c:716 src/bus/jopcyc.c:557 src/bus/jopcyc.c:596
-#: src/bus/jopcyc.c:628 src/bus/jopcyc.c:662 src/bus/zefant-xs3.c:707
-#: src/bus/zefant-xs3.c:780 src/bus/zefant-xs3.c:831 src/bus/zefant-xs3.c:887
+#: src/bus/fjmem.c:606 src/bus/fjmem.c:641 src/bus/fjmem.c:676
+#: src/bus/fjmem.c:712 src/bus/jopcyc.c:555 src/bus/jopcyc.c:594
+#: src/bus/jopcyc.c:626 src/bus/jopcyc.c:660 src/bus/zefant-xs3.c:705
+#: src/bus/zefant-xs3.c:778 src/bus/zefant-xs3.c:829 src/bus/zefant-xs3.c:885
 msgid "Address out of range"
 msgstr ""
 
-#: src/bus/fjmem.c:733
+#: src/bus/fjmem.c:729
 msgid ""
 "FPGA JTAG memory bus driver via USER register, requires parameters:\n"
 "           opcode=<USERx OPCODE> [len=<FJMEM REG LEN>]"
 msgstr ""
 
-#: src/bus/ixp425.c:117
+#: src/bus/ixp425.c:115
 #, fuzzy, c-format
 msgid "Intel IXP425 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/ixp425.c:290
+#: src/bus/ixp425.c:288
 #, fuzzy
 msgid "Intel IXP425 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/jopcyc.c:344
+#: src/bus/jopcyc.c:342
 #, fuzzy, c-format
 msgid ""
 "JOP.design Cyclone Board compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/jopcyc.c:694
+#: src/bus/jopcyc.c:692
 #, fuzzy
 msgid "JOP.design Cyclone Board compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/lh7a400.c:139
+#: src/bus/lh7a400.c:137
 #, fuzzy, c-format
 msgid "Sharp LH7A400 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/lh7a400.c:327
+#: src/bus/lh7a400.c:325
 #, fuzzy
 msgid "Sharp LH7A400 compatible bus driver via BSR (flash access only!)"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/mpc5200.c:157
+#: src/bus/mpc5200.c:155
 #, fuzzy, c-format
 msgid "Freescale MPC5200 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/mpc5200.c:172
+#: src/bus/mpc5200.c:170
 msgid "LocalPlus Bus"
 msgstr ""
 
-#: src/bus/mpc5200.c:401
+#: src/bus/mpc5200.c:399
 #, fuzzy
 msgid "Freescale MPC5200 compatible bus driver via BSR, parameter: [mux]"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/mpc824x.c:113
+#: src/bus/mpc824x.c:111
 msgid ""
 "   Bus width 64 exists in mpc824x, but not supported by UrJTAG currently"
 msgstr ""
 
-#: src/bus/mpc824x.c:118
+#: src/bus/mpc824x.c:116
 msgid "   Only 8, 16, 32 and 64 bus width are supported for Banks 0 and 1"
 msgstr ""
 
-#: src/bus/mpc824x.c:130
+#: src/bus/mpc824x.c:128
 msgid ""
 "Usage: initbus mpc824x [width=WIDTH] [revbits] [dbgAddr] [dbgData]\n"
 "\n"
@@ -670,45 +670,45 @@ msgid ""
 "   dbgData    display data bus state (default - no)\n"
 msgstr ""
 
-#: src/bus/mpc824x.c:156
+#: src/bus/mpc824x.c:154
 #, c-format
 msgid "   Using default bus width %d\n"
 msgstr ""
 
-#: src/bus/mpc824x.c:250
+#: src/bus/mpc824x.c:248
 #, fuzzy, c-format
 msgid "Motorola MPC824x compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/mpc824x.c:274
+#: src/bus/mpc824x.c:272
 msgid "Base ROM Interface (Bank 1)"
 msgstr ""
 
-#: src/bus/mpc824x.c:284 src/bus/mpc824x.c:303
+#: src/bus/mpc824x.c:282 src/bus/mpc824x.c:301
 msgid "Base ROM Interface (Bank 0)"
 msgstr ""
 
-#: src/bus/mpc824x.c:337
+#: src/bus/mpc824x.c:335
 #, c-format
 msgid "Warning: unhandled bus width: %i"
 msgstr ""
 
-#: src/bus/mpc824x.c:363
+#: src/bus/mpc824x.c:361
 #, c-format
 msgid "Addr    [%2d:0]: %06lX   "
 msgstr ""
 
-#: src/bus/mpc824x.c:413
+#: src/bus/mpc824x.c:411
 #, c-format
 msgid "Data WR [%d:0]: %08lX   "
 msgstr ""
 
-#: src/bus/mpc824x.c:461
+#: src/bus/mpc824x.c:459
 #, c-format
 msgid "Data RD [%d:0]: %08lX   "
 msgstr ""
 
-#: src/bus/mpc824x.c:583
+#: src/bus/mpc824x.c:581
 #, fuzzy
 msgid "Motorola MPC824x compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
@@ -743,12 +743,12 @@ msgid ""
 "Freescale MPC837x compatible bus driver via BSR, parameter: [mux] [width]"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/ppc405ep.c:113
+#: src/bus/ppc405ep.c:111
 #, fuzzy, c-format
 msgid "IBM PowerPC 405EP compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/ppc405ep.c:267
+#: src/bus/ppc405ep.c:265
 #, fuzzy
 msgid "IBM PowerPC 405EP compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
@@ -764,48 +764,48 @@ msgstr "Musomyi: Biturutse"
 msgid "IBM PowerPC 440GX 8-bit EBC compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/prototype.c:133
+#: src/bus/prototype.c:131
 #, c-format
 msgid "value %lu not defined for parameter %s"
 msgstr ""
 
-#: src/bus/prototype.c:166 src/cmd/cmd_get.c:71 src/cmd/cmd_set.c:98
+#: src/bus/prototype.c:164 src/cmd/cmd_get.c:71 src/cmd/cmd_set.c:98
 #: src/cmd/cmd_test.c:75
 #, fuzzy, c-format
 msgid "signal '%s' not found"
 msgstr "OYA"
 
-#: src/bus/prototype.c:210
+#: src/bus/prototype.c:208
 #, c-format
 msgid "parameter %s is unknown"
 msgstr ""
 
-#: src/bus/prototype.c:254
+#: src/bus/prototype.c:252
 msgid "parameters alsb=<signal> and/or amsb=<signal> are not defined"
 msgstr ""
 
-#: src/bus/prototype.c:314
+#: src/bus/prototype.c:312
 msgid "parameters dlsb=<signal> and/or dmsb=<signal> are not defined\n"
 msgstr ""
 
-#: src/bus/prototype.c:321
+#: src/bus/prototype.c:319
 msgid "parameter cs=<signal> or ncs=<signal> is not defined\n"
 msgstr ""
 
-#: src/bus/prototype.c:328
+#: src/bus/prototype.c:326
 msgid "parameter oe=<signal> or noe=<signal> is not defined\n"
 msgstr ""
 
-#: src/bus/prototype.c:335
+#: src/bus/prototype.c:333
 msgid "parameter we=<signal> or nwe=<signal> is not defined\n"
 msgstr ""
 
-#: src/bus/prototype.c:361
+#: src/bus/prototype.c:359
 #, fuzzy, c-format
 msgid "Configurable prototype bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/prototype.c:517
+#: src/bus/prototype.c:515
 msgid ""
 "Configurable prototype bus driver via BSR, requires parameters:\n"
 "           amsb=<addr MSB> alsb=<addr LSB> dmsb=<data MSB> dlsb=<data LSB>\n"
@@ -813,207 +813,207 @@ msgid ""
 "x8|x16|x32]"
 msgstr ""
 
-#: src/bus/pxa2x0.c:256
+#: src/bus/pxa2x0.c:254
 #, fuzzy, c-format
 msgid "%s (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/pxa2x0.c:327 src/bus/pxa2x0.c:426
+#: src/bus/pxa2x0.c:325 src/bus/pxa2x0.c:424
 #, fuzzy
 msgid "Static Chip Select 0"
 msgstr "0"
 
-#: src/bus/pxa2x0.c:397
+#: src/bus/pxa2x0.c:395
 msgid "Memory Mapped registers (Memory Ctl)"
 msgstr ""
 
-#: src/bus/pxa2x0.c:501
+#: src/bus/pxa2x0.c:499
 msgid "PXA270 internal address space (cfg, SRAM)"
 msgstr ""
 
-#: src/bus/pxa2x0.c:521
+#: src/bus/pxa2x0.c:519
 msgid "PXA270 SDRAM space (4x 64MB)"
 msgstr ""
 
-#: src/bus/pxa2x0.c:761
+#: src/bus/pxa2x0.c:759
 #, fuzzy
 msgid "Intel PXA2x0 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/pxa2x0.c:781
+#: src/bus/pxa2x0.c:779
 #, fuzzy
 msgid "Intel PXA27x compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/readmem.c:55 src/bus/writemem.c:49
+#: src/bus/readmem.c:53 src/bus/writemem.c:47
 #, fuzzy
 msgid "Missing bus driver"
 msgstr "Musomyi:"
 
-#: src/bus/readmem.c:68 src/bus/writemem.c:62
+#: src/bus/readmem.c:66 src/bus/writemem.c:60
 #, fuzzy
 msgid "Unknown bus width"
 msgstr "Ubugari"
 
-#: src/bus/readmem.c:81 src/bus/writemem.c:75
+#: src/bus/readmem.c:79 src/bus/writemem.c:73
 #, fuzzy, c-format
 msgid "address: 0x%08lX\n"
 msgstr "Aderesi"
 
-#: src/bus/readmem.c:83 src/bus/writemem.c:77
+#: src/bus/readmem.c:81 src/bus/writemem.c:75
 #, fuzzy, c-format
 msgid "length:  0x%08lX\n"
 msgstr "Uburebure"
 
-#: src/bus/readmem.c:88 src/bus/writemem.c:82
+#: src/bus/readmem.c:86 src/bus/writemem.c:80
 #, fuzzy
 msgid "length is 0"
 msgstr "Uburebure ni 0"
 
-#: src/bus/readmem.c:94
+#: src/bus/readmem.c:92
 msgid "reading:\n"
 msgstr ""
 
-#: src/bus/readmem.c:120 src/bus/writemem.c:98
+#: src/bus/readmem.c:118 src/bus/writemem.c:96
 #, fuzzy, c-format
 msgid "addr: 0x%08llX\r"
 msgstr "Aderesi"
 
-#: src/bus/readmem.c:133 src/bus/writemem.c:145 src/flash/flash.c:262
+#: src/bus/readmem.c:131 src/bus/writemem.c:143 src/flash/flash.c:262
 #, fuzzy
 msgid ""
 "\n"
 "Done.\n"
 msgstr "Byakozwe."
 
-#: src/bus/s3c4510x.c:179
+#: src/bus/s3c4510x.c:177
 #, fuzzy, c-format
 msgid ""
 "Samsung S3C4510B compatibile bus driver via BSR (JTAG part No. %d) RCS0="
 "%ubit\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/s3c4510x.c:427
+#: src/bus/s3c4510x.c:425
 #, fuzzy
 msgid "Samsung S3C4510B compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sa1110.c:124
+#: src/bus/sa1110.c:122
 #, fuzzy, c-format
 msgid "Intel SA-1110 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sa1110.c:307
+#: src/bus/sa1110.c:305
 #, fuzzy
 msgid "Intel SA-1110 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sh7727.c:135
+#: src/bus/sh7727.c:133
 #, fuzzy, c-format
 msgid "Hitachi SH7727 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sh7727.c:347
+#: src/bus/sh7727.c:345
 #, fuzzy
 msgid "Hitachi SH7727 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sh7750r.c:133
+#: src/bus/sh7750r.c:131
 #, fuzzy, c-format
 msgid "Hitachi SH7750R compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sh7750r.c:328
+#: src/bus/sh7750r.c:326
 #, fuzzy
 msgid "Hitachi SH7750R compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sh7751r.c:127
+#: src/bus/sh7751r.c:125
 #, fuzzy, c-format
 msgid "Hitachi SH7751R compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sh7751r.c:316
+#: src/bus/sh7751r.c:314
 #, fuzzy
 msgid "Hitachi SH7751R compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sharc21065l.c:121
+#: src/bus/sharc21065l.c:119
 #, fuzzy, c-format
 msgid ""
 "Analog Device's SHARC 21065L compatible bus driver via BSR (JTAG part No. "
 "%d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/sharc21065l.c:135
+#: src/bus/sharc21065l.c:133
 msgid "Boot Memory Select"
 msgstr ""
 
-#: src/bus/sharc21065l.c:316
+#: src/bus/sharc21065l.c:314
 #, fuzzy
 msgid "SHARC_21065L compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/slsup3.c:169
+#: src/bus/slsup3.c:167
 #, fuzzy, c-format
 msgid "SLS UP3 bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/slsup3.c:181
+#: src/bus/slsup3.c:179
 msgid "Flash Memory (2 MByte) byte mode"
 msgstr ""
 
-#: src/bus/slsup3.c:191
+#: src/bus/slsup3.c:189
 msgid "SRAM 128KByte (64K x 16)"
 msgstr ""
 
-#: src/bus/slsup3.c:201
+#: src/bus/slsup3.c:199
 msgid "LCD Display (RS select by A0)"
 msgstr ""
 
-#: src/bus/slsup3.c:440
+#: src/bus/slsup3.c:438
 #, fuzzy
 msgid "SLS UP3 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/tx4925.c:137
+#: src/bus/tx4925.c:135
 #, fuzzy, c-format
 msgid "Toshiba TX4925 compatible bus driver via BSR (JTAG part No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/tx4925.c:311
+#: src/bus/tx4925.c:309
 #, fuzzy
 msgid "Toshiba TX4925 compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/writemem.c:88
+#: src/bus/writemem.c:86
 msgid "writing:\n"
 msgstr ""
 
-#: src/bus/writemem.c:103
+#: src/bus/writemem.c:101
 #, c-format
 msgid "Short read: bc=0x%zX\n"
 msgstr ""
 
-#: src/bus/writemem.c:110
+#: src/bus/writemem.c:108
 #, fuzzy, c-format
 msgid "Unexpected end of file; Addr: 0x%08llX\n"
 msgstr "Impera Bya"
 
-#: src/bus/zefant-xs3.c:419
+#: src/bus/zefant-xs3.c:417
 #, fuzzy, c-format
 msgid ""
 "Simple Solutions Zefant-XS3 Board compatible bus driver via BSR (JTAG part "
 "No. %d)\n"
 msgstr "Musomyi: Biturutse"
 
-#: src/bus/zefant-xs3.c:756 src/bus/zefant-xs3.c:806 src/bus/zefant-xs3.c:864
-#: src/bus/zefant-xs3.c:981
+#: src/bus/zefant-xs3.c:754 src/bus/zefant-xs3.c:804 src/bus/zefant-xs3.c:862
+#: src/bus/zefant-xs3.c:979
 #, fuzzy
 msgid "Component type not supported"
 msgstr "OYA"
 
-#: src/bus/zefant-xs3.c:988
+#: src/bus/zefant-xs3.c:986
 #, fuzzy
 msgid "Simple Solutions Zefant-XS3 Board compatible bus driver via BSR"
 msgstr "Musomyi: Biturutse"
