@@ -110,7 +110,7 @@ static int dirtyjtag_read(urj_cable_t *cable, uint8_t *data, int length);
 /**
  * @brief Determine the lowest value
  */
-static int min(int a, int b) {
+static int dmin(int a, int b) {
   if (a < b) {
     return a;
   } else {
@@ -173,9 +173,9 @@ static void dirtyjtag_clock(urj_cable_t *cable, int tms, int tdi, int clock_puls
   for (i = 0; i < clock_packets; i++) {
     command_buffer[i*3] = CMD_CLK;
     command_buffer[i*3 + 1] = signals;
-    command_buffer[i*3 + 2] = min(255,clock_pulses);
+    command_buffer[i*3 + 2] = dmin(255,clock_pulses);
 
-    clock_pulses -= min(255,clock_pulses);
+    clock_pulses -= dmin(255,clock_pulses);
   }
 
   dirtyjtag_send(cable, command_buffer, 3*clock_packets);
@@ -248,7 +248,7 @@ static int dirtyjtag_transfer(urj_cable_t *cable, int len,
   for (packet_id = 0; packet_id < num_packets; packet_id++) {
     memset(packet, 0, 32);
 
-    bits_in_packet = (uint8_t)min(240, len);
+    bits_in_packet = (uint8_t)dmin(240, len);
 
     packet[0] = CMD_XFER;
     packet[1] = bits_in_packet;
