@@ -1,3 +1,6 @@
+2019-12-29 Alexander Voropay <alec@sensi.org>
+ * rename min() to resolve conflict with minwindef.h
+
 2019-12-08 Geert Stappers <stappers@stappers.it>
  * Removed '$Id$' markers for src/bus/*.c
  * Removed editor hints from src/bus/*.c
