@@ -45,6 +45,7 @@
 
 #ifdef __MINGW32__
 /* Microsoft uses a different swprintf() than ISO C requires */
+#define __USE_MINGW_ANSI_STDIO 1
 #include <stdio.h>
 #define swprintf _snwprintf
 /* No perms to give to mkdir */
