@@ -40,6 +40,8 @@
 #include "libusb.h"
 #include "../usbconn.h"
 
+extern const urj_usbconn_driver_t urj_tap_usbconn_libusb_driver;
+
 /* ---------------------------------------------------------------------- */
 
 /* @return 1 when found, 0 when not */
