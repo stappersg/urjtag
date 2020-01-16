@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Copyright (C) 2003 ETC s.r.o.
  *
  * This program is free software; you can redistribute it and/or
@@ -45,12 +43,13 @@
 
 #ifdef __MINGW32__
 /* Microsoft uses a different swprintf() than ISO C requires */
-#define __USE_MINGW_ANSI_STDIO 1
 #include <stdio.h>
 #define swprintf _snwprintf
 /* No perms to give to mkdir */
 #include <io.h>
 #define mkdir(path, mode) mkdir(path)
+/* MSVCRT.DLL does not support %zd format for size_t */
+#define __USE_MINGW_ANSI_STDIO 1
 #endif
 
 /* Some Windows code likes to define this, so undo it here */
