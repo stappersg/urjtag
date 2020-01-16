@@ -1,3 +1,7 @@
+2020-01-07 Alec Voropay <alec@sensi.org>
+ * print DATADIR and HOMEDIR with -h
+ * sysdep.h: define __USE_MINGW_ANSI_STDIO for Mingw
+
 2019-12-29 Alexander Voropay <alec@sensi.org>
  * rename min() to resolve conflict with minwindef.h
 
