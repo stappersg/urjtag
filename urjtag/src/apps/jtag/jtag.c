@@ -109,11 +109,19 @@ jtag_get_jtagdir (const char *subpath)
     }
 
     strcpy (ret, home);
+#ifdef __MINGW32__
+    strcat (ret, "\\");
+#else
     strcat (ret, "/");
+#endif
     strcat (ret, JTAGDIR);
     if (subpath)
     {
+#ifdef __MINGW32__
+        strcat (ret, "\\");
+#else
         strcat (ret, "/");
+#endif
         strcat (ret, subpath);
     }
 
