@@ -42,14 +42,14 @@
 #endif
 
 #ifdef __MINGW32__
+/* MSVCRT.DLL does not support %zd format for size_t */
+#define __USE_MINGW_ANSI_STDIO 1
 /* Microsoft uses a different swprintf() than ISO C requires */
 #include <stdio.h>
 #define swprintf _snwprintf
 /* No perms to give to mkdir */
 #include <io.h>
 #define mkdir(path, mode) mkdir(path)
-/* MSVCRT.DLL does not support %zd format for size_t */
-#define __USE_MINGW_ANSI_STDIO 1
 #endif
 
 /* Some Windows code likes to define this, so undo it here */
