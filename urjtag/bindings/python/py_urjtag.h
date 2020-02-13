@@ -35,7 +35,7 @@ struct urj_pyregister
 extern PyTypeObject urj_pyregister_Type;
 
 extern PyObject *urj_py_chkret (int rc);
-PyObject *UrjtagError;
+extern PyObject *UrjtagError;
 
 extern int urj_pyc_precheck (urj_chain_t *urc, int checks_needed);
 #define UPRC_CBL 1
