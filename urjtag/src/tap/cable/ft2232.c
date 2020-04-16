@@ -321,6 +321,16 @@ ft2232h_disable_clockdiv_by5 (urj_cable_t *cable)
 }
 
 static void
+ft2232h_enable_clockdiv_by5 (urj_cable_t *cable)
+{
+    params_t *params = cable->params;
+    urj_tap_cable_cx_cmd_root_t *cmd_root = &params->cmd_root;
+
+    urj_tap_cable_cx_cmd_queue( cmd_root, 0 );
+    urj_tap_cable_cx_cmd_push( cmd_root, ENABLE_CLOCKDIV );
+}
+
+static void
 ft2232_set_frequency_common (urj_cable_t *cable, uint32_t new_frequency, uint32_t max_frequency)
 {
     params_t *params = cable->params;
@@ -347,6 +357,8 @@ ft2232_set_frequency_common (urj_cable_t *cable, uint32_t new_frequency, uint32_
 
         if (max_frequency == FT2232H_MAX_TCK_FREQ)
             ft2232h_disable_clockdiv_by5 (cable);
+        else
+            ft2232h_enable_clockdiv_by5 (cable);
 
         /* send new divisor to device */
         div -= 1;
