@@ -47,10 +47,7 @@
 
 #include "usbconn/libusb.h"
 
-#define JLINK_WRITE_ENDPOINT 0x02
-#define JLINK_READ_ENDPOINT  (0x01 | LIBUSB_ENDPOINT_IN)
-
-#define JLINK_USB_TIMEOUT 100
+#define JLINK_USB_TIMEOUT 1000
 
 #define JLINK_IN_BUFFER_SIZE  2064
 #define JLINK_OUT_BUFFER_SIZE 2064
@@ -63,6 +60,10 @@ typedef struct
     /* Global USB buffers */
     unsigned char usb_in_buffer[JLINK_IN_BUFFER_SIZE];
     unsigned char usb_out_buffer[JLINK_OUT_BUFFER_SIZE];
+
+    uint8_t interface_number;
+    uint8_t endpoint_in;
+    uint8_t endpoint_out;
 
     int tap_length;
     uint8_t tms_buffer[JLINK_TAP_BUFFER_SIZE];
@@ -357,7 +358,7 @@ jlink_usb_write (urj_usbconn_libusb_param_t *params, unsigned int out_length)
     }
 
     result = libusb_bulk_transfer (params->handle,
-                                   JLINK_WRITE_ENDPOINT,
+                                   data->endpoint_out,
                                    data->usb_out_buffer,
                                    out_length, &actual,
                                    JLINK_USB_TIMEOUT);
@@ -381,7 +382,7 @@ jlink_usb_read (urj_usbconn_libusb_param_t *params)
     int result, actual;
 
     result = libusb_bulk_transfer (params->handle,
-                                   JLINK_READ_ENDPOINT,
+                                   data->endpoint_in,
                                    data->usb_in_buffer,
                                    JLINK_IN_BUFFER_SIZE,
                                    &actual,
@@ -420,6 +421,76 @@ jlink_debug_buffer (unsigned char *buffer, int length)
 
 /* ---------------------------------------------------------------------- */
 
+// Mostly copied by libjaylink's transport_usb.c
+static int
+jlink_find_endpoints (urj_usbconn_libusb_param_t *params)
+{
+    int ret;
+    struct libusb_config_descriptor *config;
+    const struct libusb_interface *interface;
+    const struct libusb_interface_descriptor *desc;
+    const struct libusb_endpoint_descriptor *epdesc;
+    jlink_usbconn_data_t *data = params->data;
+
+    ret = libusb_get_active_config_descriptor (params->dev, &config);
+
+    if (ret != LIBUSB_SUCCESS)
+    {
+        return -1;
+    }
+
+    uint8_t found_interface = 0;
+
+    for (uint8_t i = 0; i < config->bNumInterfaces; i++)
+    {
+        interface = &config->interface[i];
+        desc = &interface->altsetting[0];
+
+        if (desc->bInterfaceClass != LIBUSB_CLASS_VENDOR_SPEC)
+            continue;
+
+        if (desc->bInterfaceSubClass != LIBUSB_CLASS_VENDOR_SPEC)
+            continue;
+
+        if (desc->bNumEndpoints < 2)
+            continue;
+
+        found_interface = 1;
+        data->interface_number = i;
+        break;
+    }
+
+    if (!found_interface)
+    {
+        libusb_free_config_descriptor (config);
+        return URJ_STATUS_FAIL;
+    }
+
+    uint8_t found_endpoint_in = 0;
+    uint8_t found_endpoint_out = 0;
+
+    for (uint8_t i = 0; i < desc->bNumEndpoints; i++) {
+        epdesc = &desc->endpoint[i];
+
+        if (epdesc->bEndpointAddress & LIBUSB_ENDPOINT_IN)
+        {
+            data->endpoint_in = epdesc->bEndpointAddress;
+            found_endpoint_in = 1;
+        }
+        else
+        {
+            data->endpoint_out = epdesc->bEndpointAddress;
+            found_endpoint_out = 1;
+        }
+    }
+
+    libusb_free_config_descriptor (config);
+
+    return found_endpoint_out && found_endpoint_in ? URJ_STATUS_OK : URJ_STATUS_FAIL;
+}
+
+/* ---------------------------------------------------------------------- */
+
 static int
 jlink_init (urj_cable_t *cable)
 {
@@ -439,6 +510,12 @@ jlink_init (urj_cable_t *cable)
 
     if (urj_tap_usbconn_open (cable->link.usb) != URJ_STATUS_OK)
         return URJ_STATUS_FAIL;
+
+    if (jlink_find_endpoints(params) != URJ_STATUS_OK)
+    {
+        urj_error_set (URJ_ERROR_USB, "Failed to find usb endpoints.");
+        return URJ_STATUS_FAIL;
+    }
 
     jlink_tap_init (data);
 
