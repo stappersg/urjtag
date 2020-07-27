@@ -390,7 +390,7 @@ AC_ARG_ENABLE([python],
   [], [enable_python="detect"])
 
 AS_IF([test "x$enable_python" != "xno"], [
-  AM_PATH_PYTHON([2.5], [enable_python=yes], [enable_python=no])
+  AM_PATH_PYTHON([3.0], [enable_python=yes], [enable_python=no])
 ])
 
 AM_CONDITIONAL([BIND_PYTHON], [test "x$enable_python" = "xyes"])
