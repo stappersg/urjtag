@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2007, 2019 Kolja Waschk and other
+# Copyright (C) 2007-2021 Kolja Waschk and others
 #    UrJTAG.org developers, (C) 2002, 2003 ETC s.r.o.
 #
 # This program is free software; you can redistribute it and/or
@@ -21,11 +21,11 @@
 #  and other UrJTAG authors, 2007, 2008, ...
 #
 
-AC_INIT([UrJTAG], [2019.12], [http://urjtag.org], [urjtag])
+AC_INIT([UrJTAG], [2021.03], [http://urjtag.org], [urjtag])
 
 dnl autoconf-2.64 was released in 2008
 AC_PREREQ(2.64)
-AC_COPYRIGHT([Copyright (C) 2007/08 Kolja Waschk and other UrJTAG authors; 2002/03 ETC s.r.o.])
+AC_COPYRIGHT([Copyright (C) 2007...2021 Kolja Waschk and other UrJTAG authors; 2002/03 ETC s.r.o.])
 AC_REVISION($Revision$)
 
 # Get SVN Revision - idea from xfce-power-manager (C) 2007 by B.Tarricone
