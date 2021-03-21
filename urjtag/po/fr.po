@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU jtag 0.5.1\n"
 "Report-Msgid-Bugs-To: marcel@telka.sk\n"
-"POT-Creation-Date: 2019-12-21 21:07+0100\n"
+"POT-Creation-Date: 2021-03-21 20:46+0100\n"
 "PO-Revision-Date: 2004-05-10 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -17,57 +17,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/apps/jtag/jtag.c:369
+#: src/apps/jtag/jtag.c:377
 #, c-format
 msgid "'%s' must not be run suid root!\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:428
+#: src/apps/jtag/jtag.c:436
 #, fuzzy, c-format
 msgid "%s #%s\n"
 msgstr "%-13s %s\n"
 
-#: src/apps/jtag/jtag.c:431
+#: src/apps/jtag/jtag.c:439
 #, c-format
 msgid "Usage: %s [OPTIONS] [FILE [FILE ... ]] \n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:434
+#: src/apps/jtag/jtag.c:442
 #, c-format
 msgid "  -h, --help          display this help and exit\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:435
+#: src/apps/jtag/jtag.c:443
 #, c-format
 msgid "  -v, --version       display version information and exit\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:437
+#: src/apps/jtag/jtag.c:445
 #, c-format
 msgid "  -n, --norc          disable reading ~/.jtag/rc on startup\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:438
+#: src/apps/jtag/jtag.c:446
 #, c-format
 msgid "  -i, --interactive   enter interactive mode after reading files\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:439
+#: src/apps/jtag/jtag.c:447
 #, c-format
 msgid "  -q, --quiet         Do not print help on startup\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:441
+#: src/apps/jtag/jtag.c:449
 #, c-format
 msgid "  [FILE]              file containing commands to execute\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:444
+#: src/apps/jtag/jtag.c:452
 #, c-format
-msgid "  Please report bugs at http://www.urjtag.org\n"
+msgid ""
+"  Please report bugs at http://www.urjtag.org\n"
+"\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:451
+#: src/apps/jtag/jtag.c:453
+#, fuzzy, c-format
+msgid "Home directory: %s\n"
+msgstr "ne peut ouvrir %s\n"
+
+#: src/apps/jtag/jtag.c:454
+#, fuzzy, c-format
+msgid "Data directory: %s\n"
+msgstr "ne peut ouvrir %s\n"
+
+#: src/apps/jtag/jtag.c:461
 #, c-format
 msgid ""
 "\n"
@@ -77,7 +89,7 @@ msgid ""
 "Copyright (C) 2007, 2008, 2009 Kolja Waschk and the respective authors\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:456
+#: src/apps/jtag/jtag.c:466
 #, c-format
 msgid ""
 "\n"
@@ -96,17 +108,17 @@ msgid ""
 "Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n"
 msgstr ""
 
-#: src/apps/jtag/jtag.c:482 src/apps/jtag/jtag.c:505 src/apps/jtag/jtag.c:528
+#: src/apps/jtag/jtag.c:492 src/apps/jtag/jtag.c:515 src/apps/jtag/jtag.c:538
 #, c-format
 msgid "Out of memory\n"
 msgstr "Mémoire épuisée\n"
 
-#: src/apps/jtag/jtag.c:490
+#: src/apps/jtag/jtag.c:500
 #, c-format
 msgid "Unable to open file `%s'!\n"
 msgstr "Incapable d'ouvrir le fichier `%s'!\n"
 
-#: src/apps/jtag/jtag.c:517
+#: src/apps/jtag/jtag.c:527
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -137,7 +149,7 @@ msgstr ""
 "avec ce programme; sinon, écrire à la Free Software Foundation, Inc.,\n"
 "59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/apps/jtag/jtag.c:534
+#: src/apps/jtag/jtag.c:544
 #, fuzzy, c-format
 msgid "%s may damage your hardware!\n"
 msgstr ""
@@ -145,7 +157,7 @@ msgstr ""
 "quitter!\n"
 "\n"
 
-#: src/apps/jtag/jtag.c:536
+#: src/apps/jtag/jtag.c:546
 #, fuzzy
 msgid ""
 "Type \"quit\" to exit, \"help\" for help.\n"
@@ -3068,7 +3080,7 @@ msgstr ""
 msgid "Parsing %6d/%d (%3.0d%%)"
 msgstr ""
 
-#: src/svf/svf_flex.l:424 src/tap/cable/ft2232.c:2491
+#: src/svf/svf_flex.l:424 src/tap/cable/ft2232.c:2503
 #: src/tap/cable/generic_parport.c:89 src/tap/cable/generic_usbconn.c:156
 #: src/tap/cable/jim.c:71 src/tap/cable/ts7800.c:170
 #: src/tap/cable/usbblaster.c:79 src/tap/cable/vision_ep9307.c:214
@@ -3088,7 +3100,7 @@ msgstr ""
 "Cable du port parallèle de chargement Altera ByteBlaster/ByteBlaster II/"
 "ByteBlasterMV"
 
-#: src/tap/cable.c:95 src/tap/usbconn/libusb.c:156
+#: src/tap/cable.c:95 src/tap/usbconn/libusb.c:158
 #, c-format
 msgid "malloc(%zd)/malloc(%zd) fails"
 msgstr ""
@@ -3129,96 +3141,96 @@ msgstr "Cable JATB ETC EA253"
 msgid "ETC EI012 JTAG Cable"
 msgstr "Cable JTAG ETC EI012"
 
-#: src/tap/cable/ft2232.c:344
+#: src/tap/cable/ft2232.c:354
 #, c-format
 msgid "Warning: Setting lowest supported frequency for FT2232%s: %d\n"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:922
+#: src/tap/cable/ft2232.c:934
 msgid "Please power on the TARGET board and connect VCC signal"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:1053
+#: src/tap/cable/ft2232.c:1065
 msgid "Vref not detected. Please power on Milkymist One"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:1281
+#: src/tap/cable/ft2232.c:1293
 msgid "JTAGv5: Power of target not detected. Please power on target device."
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2564
+#: src/tap/cable/ft2232.c:2576
 msgid "Generic FTDI FT2232 Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2584
+#: src/tap/cable/ft2232.c:2596
 msgid "Olimex ARM-USB-OCD[-TINY] (FT2232) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2605
+#: src/tap/cable/ft2232.c:2617
 msgid "Olimex ARM-USB-TINY-H (FT2232H) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2626
+#: src/tap/cable/ft2232.c:2638
 msgid "Analog Devices Blackfin gnICE (FT2232) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2646
+#: src/tap/cable/ft2232.c:2658
 msgid "Analog Devices Blackfin gnICE+ (FT2232H) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2666
+#: src/tap/cable/ft2232.c:2678
 msgid "Amontec JTAGkey (FT2232) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2686
+#: src/tap/cable/ft2232.c:2698
 msgid "OOCDLink-s (FT2232) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2706
+#: src/tap/cable/ft2232.c:2718
 msgid "Turtelizer 2 Rev. B (FT2232) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2726
+#: src/tap/cable/ft2232.c:2738
 msgid "USB<=>JTAG&RS232 (FT2232) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2746
+#: src/tap/cable/ft2232.c:2758
 msgid "USB to JTAG Interface (FT2232) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2766
+#: src/tap/cable/ft2232.c:2778
 msgid "Xverve DT-USB-ST Signalyzer Tool (FT2232) Cable (EXPERIMENTAL)"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2786
+#: src/tap/cable/ft2232.c:2798
 msgid "TinCanTools Flyswatter (FT2232) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2806
+#: src/tap/cable/ft2232.c:2818
 msgid "KrisTech usbScarabeus2 (FT2232) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2826
+#: src/tap/cable/ft2232.c:2838
 msgid "KrisTech KT-LINK (FT2232H based) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2846
+#: src/tap/cable/ft2232.c:2858
 msgid "Milkymist JTAG/serial (FT2232) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2866
+#: src/tap/cable/ft2232.c:2878
 msgid "Digilent HS1 Adapter"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2886
+#: src/tap/cable/ft2232.c:2898
 msgid "Generic FTDI FT4232 Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2906
+#: src/tap/cable/ft2232.c:2918
 msgid "XDS100 compatible JTAG/serial (FT2232) Cable"
 msgstr ""
 
-#: src/tap/cable/ft2232.c:2926
+#: src/tap/cable/ft2232.c:2938
 msgid "XDS100v2 compatible JTAG/serial (FT2232H) Cable"
 msgstr ""
 
@@ -3353,7 +3365,7 @@ msgstr ""
 msgid "JTAG target simulator JIM"
 msgstr ""
 
-#: src/tap/cable/jlink.c:630
+#: src/tap/cable/jlink.c:707
 msgid "Segger/IAR J-Link, Atmel SAM-ICE and others."
 msgstr ""
 
