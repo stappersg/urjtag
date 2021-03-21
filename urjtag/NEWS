@@ -1,5 +1,16 @@
 $Id$
 
+urjtag-2021.03
+
+ * Require Python 3
+ * Cable/J-Link: Dynamically search for usb endpoints
+ * Support for Altera MAX V 5M1270Z
+ * Fix FT2232 cables
+ * Fix GCC 10 build error on UrjtagError declaration
+ * Use \\ path separator on MINGW
+ * Define __USE_MINGW_ANSI_STDIO before include stdio.h
+ * compile error fix
+
 urjtag-2019.12
 
  * Disambiguate part
