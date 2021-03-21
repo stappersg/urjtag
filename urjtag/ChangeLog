@@ -1,3 +1,24 @@
+2020-07-27 Geert Stappers <stappers@stappers.nl>
+ * Require Python 3
+
+2020-07-26 Stephan Brunner <s.brunner@stephan-brunner.net>
+ * Cable/J-Link: Dynamically search for usb endpoints
+
+2020-06-10 Olaf Mandel <o.mandel@menlosystems.com>
+ * Support for Altera MAX V 5M1270Z
+
+2020-04-16 Udi Finkelstein <github@udifink.com>
+ * Fix FT2232 cables
+
+2020-02-13 Dan Horák <dan@danny.cz>
+ * Fix GCC 10 build error on UrjtagError declaration
+
+2020-02-07 Alec Voropay <alec@sensi.org>
+ * Use \\ path separator on MINGW
+
+2020-02-06 Alec Voropay <alec@sensi.org>
+ * Define __USE_MINGW_ANSI_STDIO before include stdio.h
+
 2020-01-11 Yuri <yurivict@users.sourceforge.net>
  * compile error fix
 
