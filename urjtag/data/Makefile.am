@@ -152,12 +152,16 @@ nobase_dist_pkgdata_DATA = \
 	lattice/lc4128c-tqfp100/lc4128c-tqfp100 \
 	lattice/lfec2-12e/STEPPINGS \
 	lattice/lfec2-12e/lfec2-12e \
+	lattice/lfe5u-45f-cabga256/STEPPINGS \
+	lattice/lfe5u-45f-cabga256/lfe5u-45f-cabga256 \
 	lattice/m4a3-256.192-fpbga256/STEPPINGS \
 	lattice/m4a3-256.192-fpbga256/m4a3-256.192-fpbga256 \
 	lattice/m4a3-64.32-tqfp48/STEPPINGS \
 	lattice/m4a3-64.32-tqfp48/m4a3-64.32-tqfp48 \
 	lattice/lcmxo2-1200-csbga132/STEPPINGS \
 	lattice/lcmxo2-1200-csbga132/lcmxo2-1200-csbga132 \
+	lattice/lcmxo3-6900-cabga256/STEPPINGS \
+	lattice/lcmxo3-6900-cabga256/lcmxo3-6900-cabga256 \
 	lexra/PARTS \
 	lexra/lx5280/STEPPINGS \
 	lexra/lx5280/lx5280 \
