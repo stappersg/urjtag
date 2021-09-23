@@ -2593,7 +2593,7 @@ URJ_DECLARE_FTDX_CABLE(0x0000, 0x0000, "-mpsse", "FT2232", ft2232)
 
 const urj_cable_driver_t urj_tap_cable_ft2232_armusbocd_driver = {
     "ARM-USB-OCD",
-    N_("Olimex ARM-USB-OCD[-TINY] (FT2232) Cable"),
+    N_("Olimex ARM-USB-OCD (FT2232) Cable"),
     URJ_CABLE_DEVICE_USB,
     { .usb = ft2232_connect, },
     urj_tap_cable_generic_disconnect,
@@ -2610,10 +2610,29 @@ const urj_cable_driver_t urj_tap_cable_ft2232_armusbocd_driver = {
     ftdx_usbcable_help
 };
 URJ_DECLARE_FTDX_CABLE(0x15BA, 0x0003, "-mpsse", "ARM-USB-OCD", armusbocd)
-URJ_DECLARE_FTDX_CABLE(0x15BA, 0x0004, "-mpsse", "ARM-USB-OCD", armusbocdtiny)
+
+const urj_cable_driver_t urj_tap_cable_ft2232_armusbocdtiny_driver = {
+    "ARM-USB-OCD-TINY",
+    N_("Olimex ARM-USB-OCD-TINY (FT2232) Cable"),
+    URJ_CABLE_DEVICE_USB,
+    { .usb = ft2232_connect, },
+    urj_tap_cable_generic_disconnect,
+    ft2232_cable_free,
+    ft2232_armusbocd_init,
+    ft2232_armusbocd_done,
+    ft2232_set_frequency,
+    ft2232_clock,
+    ft2232_get_tdo,
+    ft2232_transfer,
+    ft2232_set_signal,
+    urj_tap_cable_generic_get_signal,
+    ft2232_flush,
+    ftdx_usbcable_help
+};
+URJ_DECLARE_FTDX_CABLE(0x15BA, 0x0004, "-mpsse", "ARM-USB-OCD-TINY", armusbocdtiny)
 
 const urj_cable_driver_t urj_tap_cable_ft2232_armusbtiny_h_driver = {
-    "ARM-USB-OCD-H",
+    "ARM-USB-TINY-H",
     N_("Olimex ARM-USB-TINY-H (FT2232H) Cable"),
     URJ_CABLE_DEVICE_USB,
     { .usb = ft2232_connect, },
@@ -2631,6 +2650,25 @@ const urj_cable_driver_t urj_tap_cable_ft2232_armusbtiny_h_driver = {
     ftdx_usbcable_help
 };
 URJ_DECLARE_FTDX_CABLE(0x15BA, 0x002A, "-mpsse", "ARM-USB-TINY-H", armusbtiny_h)
+
+const urj_cable_driver_t urj_tap_cable_ft2232_armusbocd_h_driver = {
+    "ARM-USB-OCD-H",
+    N_("Olimex ARM-USB-OCD-H (FT2232H) Cable"),
+    URJ_CABLE_DEVICE_USB,
+    { .usb = ft2232_connect, },
+    urj_tap_cable_generic_disconnect,
+    ft2232_cable_free,
+    ft2232_armusbtiny_h_init,
+    ft2232_armusbocd_done,
+    ft2232h_set_frequency,
+    ft2232_clock,
+    ft2232_get_tdo,
+    ft2232_transfer,
+    ft2232_set_signal,
+    urj_tap_cable_generic_get_signal,
+    ft2232_flush,
+    ftdx_usbcable_help
+};
 URJ_DECLARE_FTDX_CABLE(0x15BA, 0x002B, "-mpsse", "ARM-USB-OCD-H", armusbocd_h)
 
 const urj_cable_driver_t urj_tap_cable_ft2232_gnice_driver = {
