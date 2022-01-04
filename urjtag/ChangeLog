@@ -1,3 +1,6 @@
+2022-01-04 Teddy B <sendmeouttaspace@gmail.com>
+ * Added Freescale device MPC5646
+
 2021-09-23 Benjamin Herrenschmidt <benh@kernel.crashing.org>
  * Fix detection of some Olimex cables
 
