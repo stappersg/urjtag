@@ -1,0 +1,590 @@
+signal PAD_18
+signal PAD_40
+signal PAD_45
+signal PAD_44
+signal PAD_176
+signal PAD_175
+signal PAD_174
+signal PAD_173
+signal PAD_177
+signal PAD_172
+signal PAD_171
+signal PAD_170
+signal PAD_197
+signal PAD_169
+signal PAD_128
+signal PAD_129
+signal PAD_130
+signal PAD_131
+signal PAD_71
+signal PAD_70
+signal PAD_120
+signal PAD_119
+signal PAD_118
+signal PAD_117
+signal PAD_189
+signal PAD_188
+signal PAD_116
+signal PAD_69
+signal PAD_68
+signal PAD_36
+signal PAD_37
+signal PAD_67
+signal PAD_66
+signal PAD_121
+signal PAD_194
+signal PAD_32
+signal PAD_33
+signal PAD_193
+signal PAD_192
+signal PAD_191
+signal PAD_190
+signal PAD_122
+signal PAD_6
+signal PAD_5
+signal PAD_34
+signal PAD_35
+signal PAD_132
+signal PAD_133
+signal PAD_124
+signal PAD_123
+signal PAD_107
+signal PAD_106
+signal PAD_79
+signal PAD_78
+signal PAD_111
+signal PAD_110
+signal PAD_76
+signal PAD_11
+signal PAD_10
+signal PAD_9
+signal PAD_8
+signal PAD_7
+signal PAD_77
+signal PAD_195
+signal PAD_94
+signal PAD_196
+signal PAD_95
+signal FLASH_SEAL_PAD
+signal PAD_96
+signal PAD_97
+signal PAD_115
+signal PAD_114
+signal PAD_113
+signal PAD_112
+signal PAD_108
+signal PAD_109
+signal PAD_3
+signal PAD_141
+signal PAD_140
+signal PAD_139
+signal PAD_138
+signal PAD_137
+signal PAD_136
+signal PAD_31
+signal PAD_63
+signal PAD_30
+signal PAD_62
+signal PAD_29
+signal PAD_61
+signal PAD_28
+signal PAD_60
+signal PAD_27
+signal PAD_59
+signal PAD_58
+signal PAD_57
+signal PAD_149
+signal PAD_150
+signal PAD_151
+signal PAD_152
+signal PAD_23
+signal PAD_22
+signal PAD_21
+signal PAD_20
+signal PAD_56
+signal PAD_55
+signal PAD_54
+signal PAD_53
+signal PAD_187
+signal PAD_186
+signal PAD_185
+signal PAD_184
+signal PAD_52
+signal PAD_51
+signal PAD_50
+signal PAD_49
+signal PAD_48
+signal PAD_142
+signal PAD_143
+signal PAD_144
+signal PAD_145
+signal PAD_146
+signal PAD_147
+signal PAD_87
+signal PAD_86
+signal PAD_85
+signal PAD_84
+signal PAD_83
+signal PAD_82
+signal PAD_81
+signal PAD_80
+signal PAD_26
+signal PAD_24
+signal PAD_12
+signal PAD_153
+signal PAD_154
+signal PAD_13
+signal PAD_157
+signal PAD_158
+signal PAD_159
+signal PAD_160
+signal PAD_4
+signal PAD_155
+signal PAD_156
+signal PAD_14
+signal PAD_93
+signal PAD_15
+signal PAD_91
+signal PAD_90
+signal PAD_39
+signal PAD_38
+signal PAD_92
+signal PAD_88
+signal PAD_89
+signal PAD_168
+signal PAD_167
+signal PAD_166
+signal PAD_165
+signal PAD_183
+signal PAD_182
+signal PAD_164
+signal PAD_163
+signal PAD_162
+signal PAD_161
+signal PAD_17
+signal PAD_16
+signal PAD_102
+signal PAD_103
+signal PAD_42
+signal PAD_43
+signal PAD_104
+signal PAD_105
+signal RESET
+signal VPP_TEST
+signal PAD_75
+signal PAD_181
+signal PAD_0
+signal PAD_74
+signal PAD_180
+signal PAD_179
+signal PAD_178
+signal PAD_73
+signal PAD_72
+signal PAD_65
+signal PAD_1
+signal PAD_64
+signal PAD_2
+signal PAD_98
+signal PAD_99
+signal PAD_100
+signal PAD_198
+signal PAD_101
+signal PAD_135
+signal PAD_134
+signal PAD_126
+signal PAD_125
+signal PAD_127
+signal PAD_148
+signal PAD_47
+signal PAD_46
+signal PAD_41
+signal PAD_19
+instruction length 5
+register DIR 32
+register BSR 372
+register BYPASS 1
+register CENSOR_CTRL 65
+register TEST_CTRL 25
+instruction ENABLE_CENSOR_CTRL 00111 CENSOR_CTRL
+instruction ENABLE_TEST_CTRL 00110 TEST_CTRL
+instruction TEST_LEAKAGE 00101 BYPASS
+instruction CLAMP 01100 BYPASS
+instruction HIGHZ 01001 BYPASS
+instruction PRELOAD 00010 BSR
+instruction SAMPLE/PRELOAD 00011 BSR
+instruction EXTEST 00100 BSR
+instruction IDCODE 00001 DIR
+instruction BYPASS 11111 BYPASS
+instruction ACCESS_AUX_TAP_ONCE 10001 BYPASS
+bit 0 C 0 *
+bit 1 B ? PAD_182 0 0 Z
+bit 2 C 0 *
+bit 3 B ? PAD_183 2 0 Z
+bit 4 C 0 *
+bit 5 B ? PAD_184 4 0 Z
+bit 6 C 0 *
+bit 7 B ? PAD_185 6 0 Z
+bit 8 C 0 *
+bit 9 B ? PAD_186 8 0 Z
+bit 10 C 0 *
+bit 11 B ? PAD_187 10 0 Z
+bit 12 C 0 *
+bit 13 B ? PAD_188 12 0 Z
+bit 14 C 0 *
+bit 15 B ? PAD_189 14 0 Z
+bit 16 C 0 *
+bit 17 B ? PAD_190 16 0 Z
+bit 18 C 0 *
+bit 19 B ? PAD_198 18 0 Z
+bit 20 C 0 *
+bit 21 B ? PAD_197 20 0 Z
+bit 22 C 0 *
+bit 23 B ? PAD_196 22 0 Z
+bit 24 C 0 *
+bit 25 B ? PAD_195 24 0 Z
+bit 26 C 0 *
+bit 27 B ? PAD_194 26 0 Z
+bit 28 C 0 *
+bit 29 B ? PAD_193 28 0 Z
+bit 30 C 0 *
+bit 31 B ? PAD_192 30 0 Z
+bit 32 C 0 *
+bit 33 B ? PAD_191 32 0 Z
+bit 34 C 0 *
+bit 35 B ? PAD_149 34 0 Z
+bit 36 C 0 *
+bit 37 B ? PAD_150 36 0 Z
+bit 38 C 0 *
+bit 39 B ? PAD_151 38 0 Z
+bit 40 C 0 *
+bit 41 B ? PAD_152 40 0 Z
+bit 42 C 0 *
+bit 43 B ? PAD_153 42 0 Z
+bit 44 C 0 *
+bit 45 B ? PAD_154 44 0 Z
+bit 46 C 0 *
+bit 47 B ? PAD_155 46 0 Z
+bit 48 C 0 *
+bit 49 B ? PAD_156 48 0 Z
+bit 50 C 0 *
+bit 51 B ? PAD_157 50 0 Z
+bit 52 C 0 *
+bit 53 B ? PAD_158 52 0 Z
+bit 54 C 0 *
+bit 55 B ? PAD_159 54 0 Z
+bit 56 C 0 *
+bit 57 B ? PAD_160 56 0 Z
+bit 58 C 0 *
+bit 59 B ? PAD_161 58 0 Z
+bit 60 C 0 *
+bit 61 B ? PAD_162 60 0 Z
+bit 62 C 0 *
+bit 63 B ? PAD_163 62 0 Z
+bit 64 C 0 *
+bit 65 B ? PAD_164 64 0 Z
+bit 66 C 0 *
+bit 67 B ? PAD_165 66 0 Z
+bit 68 C 0 *
+bit 69 B ? PAD_166 68 0 Z
+bit 70 C 0 *
+bit 71 B ? PAD_167 70 0 Z
+bit 72 C 0 *
+bit 73 B ? PAD_168 72 0 Z
+bit 74 C 0 *
+bit 75 B ? PAD_169 74 0 Z
+bit 76 C 0 *
+bit 77 B ? PAD_170 76 0 Z
+bit 78 C 0 *
+bit 79 B ? PAD_171 78 0 Z
+bit 80 C 0 *
+bit 81 B ? PAD_172 80 0 Z
+bit 82 C 0 *
+bit 83 B ? PAD_173 82 0 Z
+bit 84 C 0 *
+bit 85 B ? PAD_174 84 0 Z
+bit 86 C 0 *
+bit 87 B ? PAD_175 86 0 Z
+bit 88 C 0 *
+bit 89 B ? PAD_176 88 0 Z
+bit 90 C 0 *
+bit 91 B ? PAD_177 90 0 Z
+bit 92 C 0 *
+bit 93 B ? PAD_178 92 0 Z
+bit 94 C 0 *
+bit 95 B ? PAD_179 94 0 Z
+bit 96 C 0 *
+bit 97 B ? PAD_180 96 0 Z
+bit 98 C 0 *
+bit 99 B ? PAD_181 98 0 Z
+bit 100 C 0 *
+bit 101 B ? PAD_6 100 0 Z
+bit 102 C 0 *
+bit 103 B ? PAD_5 102 0 Z
+bit 104 C 0 *
+bit 105 B ? PAD_34 104 0 Z
+bit 106 C 0 *
+bit 107 B ? PAD_35 106 0 Z
+bit 108 C 0 *
+bit 109 B ? PAD_132 108 0 Z
+bit 110 C 0 *
+bit 111 B ? PAD_133 110 0 Z
+bit 112 C 0 *
+bit 113 B ? PAD_124 112 0 Z
+bit 114 C 0 *
+bit 115 B ? PAD_123 114 0 Z
+bit 116 C 0 *
+bit 117 B ? PAD_107 116 0 Z
+bit 118 C 0 *
+bit 119 B ? PAD_106 118 0 Z
+bit 120 C 0 *
+bit 121 B ? PAD_79 120 0 Z
+bit 122 C 0 *
+bit 123 B ? PAD_78 122 0 Z
+bit 124 C 0 *
+bit 125 B ? PAD_111 124 0 Z
+bit 126 C 0 *
+bit 127 B ? PAD_110 126 0 Z
+bit 128 C 0 *
+bit 129 B ? PAD_76 128 0 Z
+bit 130 C 0 *
+bit 131 B ? PAD_11 130 0 Z
+bit 132 C 0 *
+bit 133 B ? PAD_10 132 0 Z
+bit 134 C 0 *
+bit 135 B ? PAD_9 134 0 Z
+bit 136 C 0 *
+bit 137 B ? PAD_8 136 0 Z
+bit 138 C 0 *
+bit 139 B ? PAD_7 138 0 Z
+bit 140 C 0 *
+bit 141 B ? PAD_77 140 0 Z
+bit 142 C 0 *
+bit 143 B ? PAD_94 142 0 Z
+bit 144 C 0 *
+bit 145 B ? PAD_95 144 0 Z
+bit 146 C 0 *
+bit 147 B ? PAD_96 146 0 Z
+bit 148 C 0 *
+bit 149 B ? PAD_97 148 0 Z
+bit 150 C 0 *
+bit 151 B ? PAD_115 150 0 Z
+bit 152 C 0 *
+bit 153 B ? PAD_114 152 0 Z
+bit 154 C 0 *
+bit 155 B ? PAD_113 154 0 Z
+bit 156 C 0 *
+bit 157 B ? PAD_112 156 0 Z
+bit 158 C 0 *
+bit 159 B ? PAD_108 158 0 Z
+bit 160 C 0 *
+bit 161 B ? PAD_109 160 0 Z
+bit 162 C 0 *
+bit 163 B ? PAD_3 162 0 Z
+bit 164 C 0 *
+bit 165 B ? PAD_141 164 0 Z
+bit 166 C 0 *
+bit 167 B ? PAD_140 166 0 Z
+bit 168 C 0 *
+bit 169 B ? PAD_139 168 0 Z
+bit 170 C 0 *
+bit 171 B ? PAD_138 170 0 Z
+bit 172 C 0 *
+bit 173 B ? PAD_137 172 0 Z
+bit 174 C 0 *
+bit 175 B ? PAD_136 174 0 Z
+bit 176 C 0 *
+bit 177 B ? PAD_31 176 0 Z
+bit 178 C 0 *
+bit 179 B ? PAD_63 178 0 Z
+bit 180 C 0 *
+bit 181 B ? PAD_30 180 0 Z
+bit 182 C 0 *
+bit 183 B ? PAD_62 182 0 Z
+bit 184 C 0 *
+bit 185 B ? PAD_29 184 0 Z
+bit 186 C 0 *
+bit 187 B ? PAD_61 186 0 Z
+bit 188 C 0 *
+bit 189 B ? PAD_28 188 0 Z
+bit 190 C 0 *
+bit 191 B ? PAD_60 190 0 Z
+bit 192 C 0 *
+bit 193 B ? PAD_27 192 0 Z
+bit 194 I ? PAD_59
+bit 195 I ? PAD_58
+bit 196 I ? PAD_57
+bit 197 I ? PAD_23
+bit 198 I ? PAD_22
+bit 199 I ? PAD_21
+bit 200 I ? PAD_20
+bit 201 I ? PAD_56
+bit 202 I ? PAD_55
+bit 203 I ? PAD_54
+bit 204 I ? PAD_53
+bit 205 I ? PAD_52
+bit 206 I ? PAD_51
+bit 207 I ? PAD_50
+bit 208 I ? PAD_49
+bit 209 I ? PAD_48
+bit 210 C 0 *
+bit 211 B ? PAD_142 210 0 Z
+bit 212 C 0 *
+bit 213 B ? PAD_143 212 0 Z
+bit 214 C 0 *
+bit 215 B ? PAD_144 214 0 Z
+bit 216 C 0 *
+bit 217 B ? PAD_145 216 0 Z
+bit 218 C 0 *
+bit 219 B ? PAD_146 218 0 Z
+bit 220 C 0 *
+bit 221 B ? PAD_147 220 0 Z
+bit 222 C 0 *
+bit 223 B ? PAD_87 222 0 Z
+bit 224 C 0 *
+bit 225 B ? PAD_86 224 0 Z
+bit 226 C 0 *
+bit 227 B ? PAD_85 226 0 Z
+bit 228 C 0 *
+bit 229 B ? PAD_84 228 0 Z
+bit 230 C 0 *
+bit 231 B ? PAD_83 230 0 Z
+bit 232 C 0 *
+bit 233 B ? PAD_82 232 0 Z
+bit 234 C 0 *
+bit 235 B ? PAD_81 234 0 Z
+bit 236 C 0 *
+bit 237 B ? PAD_80 236 0 Z
+bit 238 C 0 *
+bit 239 B ? PAD_26 238 0 Z
+bit 240 I ? PAD_24
+bit 241 O ? *
+bit 242 C 0 *
+bit 243 B ? PAD_12 242 0 Z
+bit 244 C 0 *
+bit 245 B ? PAD_13 244 0 Z
+bit 246 C 0 *
+bit 247 B ? PAD_4 246 0 Z
+bit 248 C 0 *
+bit 249 B ? PAD_14 248 0 Z
+bit 250 C 0 *
+bit 251 B ? PAD_93 250 0 Z
+bit 252 C 0 *
+bit 253 B ? PAD_15 252 0 Z
+bit 254 C 0 *
+bit 255 B ? PAD_91 254 0 Z
+bit 256 C 0 *
+bit 257 B ? PAD_90 256 0 Z
+bit 258 C 0 *
+bit 259 B ? PAD_39 258 0 Z
+bit 260 C 0 *
+bit 261 B ? PAD_38 260 0 Z
+bit 262 C 0 *
+bit 263 B ? PAD_92 262 0 Z
+bit 264 C 0 *
+bit 265 B ? PAD_88 264 0 Z
+bit 266 C 0 *
+bit 267 B ? PAD_89 266 0 Z
+bit 268 C 0 *
+bit 269 B ? PAD_17 268 0 Z
+bit 270 C 0 *
+bit 271 B ? PAD_16 270 0 Z
+bit 272 C 0 *
+bit 273 B ? PAD_102 272 0 Z
+bit 274 C 0 *
+bit 275 B ? PAD_103 274 0 Z
+bit 276 C 0 *
+bit 277 B ? PAD_42 276 0 Z
+bit 278 C 0 *
+bit 279 B ? PAD_43 278 0 Z
+bit 280 C 0 *
+bit 281 B ? PAD_104 280 0 Z
+bit 282 C 0 *
+bit 283 B ? PAD_105 282 0 Z
+bit 284 C 0 *
+bit 285 B ? PAD_75 284 0 Z
+bit 286 C 0 *
+bit 287 B ? PAD_0 286 0 Z
+bit 288 C 0 *
+bit 289 B ? PAD_74 288 0 Z
+bit 290 C 0 *
+bit 291 B ? PAD_73 290 0 Z
+bit 292 C 0 *
+bit 293 B ? PAD_72 292 0 Z
+bit 294 C 0 *
+bit 295 B ? PAD_65 294 0 Z
+bit 296 C 0 *
+bit 297 B ? PAD_1 296 0 Z
+bit 298 C 0 *
+bit 299 B ? PAD_64 298 0 Z
+bit 300 C 0 *
+bit 301 B ? PAD_2 300 0 Z
+bit 302 C 0 *
+bit 303 B ? PAD_98 302 0 Z
+bit 304 C 0 *
+bit 305 B ? PAD_99 304 0 Z
+bit 306 C 0 *
+bit 307 B ? PAD_100 306 0 Z
+bit 308 C 0 *
+bit 309 B ? PAD_101 308 0 Z
+bit 310 C 0 *
+bit 311 B ? PAD_135 310 0 Z
+bit 312 C 0 *
+bit 313 B ? PAD_134 312 0 Z
+bit 314 C 0 *
+bit 315 B ? PAD_126 314 0 Z
+bit 316 C 0 *
+bit 317 B ? PAD_125 316 0 Z
+bit 318 C 0 *
+bit 319 B ? PAD_127 318 0 Z
+bit 320 C 0 *
+bit 321 B ? PAD_148 320 0 Z
+bit 322 C 0 *
+bit 323 B ? PAD_47 322 0 Z
+bit 324 C 0 *
+bit 325 B ? PAD_46 324 0 Z
+bit 326 C 0 *
+bit 327 B ? PAD_41 326 0 Z
+bit 328 C 0 *
+bit 329 B ? PAD_19 328 0 Z
+bit 330 C 0 *
+bit 331 B ? PAD_18 330 0 Z
+bit 332 C 0 *
+bit 333 B ? PAD_40 332 0 Z
+bit 334 C 0 *
+bit 335 B ? PAD_45 334 0 Z
+bit 336 C 0 *
+bit 337 B ? PAD_44 336 0 Z
+bit 338 C 0 *
+bit 339 B ? PAD_128 338 0 Z
+bit 340 C 0 *
+bit 341 B ? PAD_129 340 0 Z
+bit 342 C 0 *
+bit 343 B ? PAD_130 342 0 Z
+bit 344 C 0 *
+bit 345 B ? PAD_131 344 0 Z
+bit 346 C 0 *
+bit 347 B ? PAD_71 346 0 Z
+bit 348 C 0 *
+bit 349 B ? PAD_70 348 0 Z
+bit 350 C 0 *
+bit 351 B ? PAD_120 350 0 Z
+bit 352 C 0 *
+bit 353 B ? PAD_119 352 0 Z
+bit 354 C 0 *
+bit 355 B ? PAD_118 354 0 Z
+bit 356 C 0 *
+bit 357 B ? PAD_117 356 0 Z
+bit 358 C 0 *
+bit 359 B ? PAD_116 358 0 Z
+bit 360 C 0 *
+bit 361 B ? PAD_69 360 0 Z
+bit 362 C 0 *
+bit 363 B ? PAD_68 362 0 Z
+bit 364 C 0 *
+bit 365 B ? PAD_36 364 0 Z
+bit 366 C 0 *
+bit 367 B ? PAD_37 366 0 Z
+bit 368 C 0 *
+bit 369 B ? PAD_67 368 0 Z
+bit 370 C 0 *
+bit 371 B ? PAD_66 370 0 Z
