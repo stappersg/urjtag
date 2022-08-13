@@ -15,6 +15,9 @@
 #include "jamarray.h"
 #include "jamutil.h"
 #include "jamytab.h"
+#ifdef URJ_JAM_YYDEBUG
+#include <stdio.h>
+#endif // URJ_JAM_YYDEBUG
 
 
 /* ------------- LEXER DEFINITIONS -----------------------------------------*/
@@ -1580,6 +1583,17 @@ urj_jam_yyparse (void)
 
     if (jam_yychk[jam_yyn = jam_yyact[jam_yyn]] == token)
     {                           /* valid shift */
+#ifdef URJ_JAM_YYDEBUG
+        if (token <= 0xff)
+        {
+            printf("# .. shift '%c' -> state %d\n", token, jam_yyn);
+        }
+        else
+        {
+            // symbols are NOT jam_keyword_table[*].token!
+            printf("# .. shift %d -> state %d\n", token, jam_yyn);
+        }
+#endif // URJ_JAM_YYDEBUG
         token = -1;
         urj_jam_yyval = urj_jam_yylval;
         jam_yystate = jam_yyn;
@@ -1666,6 +1680,14 @@ urj_jam_yyparse (void)
     if (jam_yyj >= YYLAST
         || jam_yychk[jam_yystate = jam_yyact[jam_yyj]] != -jam_yyn)
         jam_yystate = jam_yyact[jam_yypgo[jam_yyn]];
+#ifdef URJ_JAM_YYDEBUG
+    printf("# .. reduce P%d:", jam_yym);
+    for (int ri = -jam_yyr2[jam_yym] + 1; ri <= 0; ++ ri)
+    {
+        printf(" (t=%d v=%d)", jam_yypvt[ri].type, jam_yypvt[ri].val);
+    }
+    printf(" -> sym %d, state %d\n", jam_yyn, jam_yystate);
+#endif // URJ_JAM_YYDEBUG
     switch (jam_yym)
     {
 
