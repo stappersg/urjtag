@@ -19,7 +19,7 @@
     + INITSYMARY_NRELM          \
       )
 /// Number of EvalSpecAry elements with expected .ret_x == JAMC_SUCCESS,
-#define EVAL_EXP_NRELM_GOOD 164
+#define EVAL_EXP_NRELM_GOOD 172
 /// Number of EvalSpecAry elements with expected .ret_x != JAMC_SUCCESS.
 #define EVAL_EXP_NRELM_BAD 61
 /// Number of EvalSpecAry elements

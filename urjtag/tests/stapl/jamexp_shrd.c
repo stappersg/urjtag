@@ -123,58 +123,77 @@ struct sEvalExpSpec EvalSpecAry[EVAL_EXP_NRELM]
    // P1: default START_SYMBOL accept production?
    // P2: bool literal param of INT function
    {.expr = "INT(#10001)",  .ret_x = JAMC_SUCCESS,       .res_x = 17,               .typ_x = JAM_INTEGER_EXPR,  },
+   //     pound RHS can be a primary_expr
+   {.expr = "INT(#(10001))",.ret_x = JAMC_SUCCESS,       .res_x = 17,               .typ_x = JAM_INTEGER_EXPR,  },
+   //     pound RHS can be an expr
+   {.expr = "INT(#+10001)", .ret_x = JAMC_SUCCESS,       .res_x = 17,               .typ_x = JAM_INTEGER_EXPR,  },
    // P3: bool array ref param of INT function
    {.expr = "INT($BOOLAFFE_[7])", .ret_x = JAMC_SUCCESS,  .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,  },
+   //     array index can be a primary_expr
+   {.expr = "INT($BOOLAFFE_[(7)])", .ret_x = JAMC_SUCCESS,.res_x = 0,               .typ_x = JAM_INTEGER_EXPR,  },
+   // [5]
+   //     array index can be an expr
+   {.expr = "INT($BOOLAFFE_[+7])", .ret_x = JAMC_SUCCESS, .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,  },
    // P4: bool array range param of INT function
    {.expr = "INT(BOOLAFFE_[60..63])", .ret_x = JAMC_SUCCESS, .res_x = 5,            .typ_x = JAM_INTEGER_EXPR,  },
+   //     left array index can be a primary_expr
+   {.expr = "INT(BOOLAFFE_[(60)..63])", .ret_x = JAMC_SUCCESS, .res_x = 5,            .typ_x = JAM_INTEGER_EXPR,  },
+   //     left array index can be an expr
+   {.expr = "INT(BOOLAFFE_[+60..63])",  .ret_x = JAMC_SUCCESS, .res_x = 5,            .typ_x = JAM_INTEGER_EXPR,  },
+   //     right array index can be a primary_expr
+   {.expr = "INT(BOOLAFFE_[60..(63)])", .ret_x = JAMC_SUCCESS, .res_x = 5,            .typ_x = JAM_INTEGER_EXPR,  },
+   // [10]
+   //     right array index can be an expr
+   {.expr = "INT(BOOLAFFE_[60..+63])",  .ret_x = JAMC_SUCCESS, .res_x = 5,            .typ_x = JAM_INTEGER_EXPR,  },
    //                     ???? Success from 64-bit bool array?
    {.expr = "INT(BOOLAFFE_[0..63])", .ret_x = JAMC_SUCCESS, .res_x = -2147450891,   .typ_x = JAM_INTEGER_EXPR,  },
    // P5: bool array param of INT function
    {.expr = "INT(BOOL_BAFF[])",.ret_x = JAMC_SUCCESS,     .res_x = 0x0000baff,      .typ_x = JAM_INTEGER_EXPR,  },
    // P6: good literals and identifiers
-   // [5]
    {.expr = "42",          .ret_x = JAMC_SUCCESS,       .res_x = 42,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "0",           .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
+   // [15]
    {.expr = "1",           .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
    {.expr = "10001",       .ret_x = JAMC_SUCCESS,       .res_x = 10001,           .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2147483647",  .ret_x = JAMC_SUCCESS,       .res_x = 2147483647,      .typ_x = JAM_INTEGER_EXPR,    },
-   // [10]
 #ifdef __code_model_32__
    {.expr = "2147483648",  .ret_x = JAMC_SUCCESS,       .res_x =  2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "4294967295",  .ret_x = JAMC_SUCCESS,       .res_x =  2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
+   // [20]
    {.expr = "4294967296",  .ret_x = JAMC_SUCCESS,       .res_x =  2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "4294967297",  .ret_x = JAMC_SUCCESS,       .res_x =  2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "4294967298",  .ret_x = JAMC_SUCCESS,       .res_x =  2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
 #else
    {.expr = "2147483648",  .ret_x = JAMC_SUCCESS,       .res_x = -2147483648,     .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "4294967295",  .ret_x = JAMC_SUCCESS,       .res_x = -1,              .typ_x = JAM_INTEGER_EXPR,    },
+   // [20]
    {.expr = "4294967296",  .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
    {.expr = "4294967297",  .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
    {.expr = "4294967298",  .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,},
 #endif
-   // [15]
    {.expr = "BOOL0",       .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "INT23",       .ret_x = JAMC_SUCCESS,       .res_x = 23,              .typ_x = JAM_INTEGER_EXPR,    },
+   // [25]
    // P7: parenthesized literals and identifiers
    {.expr = "(42)",        .ret_x = JAMC_SUCCESS,       .res_x = 42,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "(0)",         .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
    {.expr = "(1)",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
-   // [20]
    {.expr = "(BOOL0)",     .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "(INT23)",     .ret_x = JAMC_SUCCESS,       .res_x = 23,              .typ_x = JAM_INTEGER_EXPR,    },
+   // [30]
    {.expr = "(1||0)",      .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "(2+3)",       .ret_x = JAMC_SUCCESS,       .res_x = 5,               .typ_x = JAM_INTEGER_EXPR,    },
    // P8-P11: prec 1 unary ops +, -, !, ~
    {.expr = "+42",         .ret_x = JAMC_SUCCESS,       .res_x = 42,              .typ_x = JAM_INTEGER_EXPR,    },
-   // [25]
    {.expr = "+0",          .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
    {.expr = "+1",          .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INT_OR_BOOL_EXPR,},
+   // [35]
    {.expr = "+BOOL0",      .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "+INT23",      .ret_x = JAMC_SUCCESS,       .res_x = 23,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "++INT23",     .ret_x = JAMC_SUCCESS,       .res_x = 23,              .typ_x = JAM_INTEGER_EXPR,    },
-   // [30]
    {.expr = "-42",         .ret_x = JAMC_SUCCESS,       .res_x = -42,             .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "-0",          .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [40]
    {.expr = "-1",          .ret_x = JAMC_SUCCESS,       .res_x = -1,              .typ_x = JAM_INTEGER_EXPR,    },
 #ifdef __code_model_32__
    {.expr = "-2147483648", .ret_x = JAMC_SUCCESS,       .res_x = -2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
@@ -182,259 +201,258 @@ struct sEvalExpSpec EvalSpecAry[EVAL_EXP_NRELM]
    {.expr = "-2147483648", .ret_x = JAMC_SUCCESS,       .res_x = -2147483648,     .typ_x = JAM_INTEGER_EXPR,    },
 #endif
    {.expr = "-BOOL0",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [35]
    {.expr = "-INT23",      .ret_x = JAMC_SUCCESS,       .res_x = -23,             .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "--INT23",     .ret_x = JAMC_SUCCESS,       .res_x =  23,             .typ_x = JAM_INTEGER_EXPR,    },
+   // [45]
    {.expr = "-+INT23",     .ret_x = JAMC_SUCCESS,       .res_x = -23,             .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "+-INT23",     .ret_x = JAMC_SUCCESS,       .res_x = -23,             .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "!42",         .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [40]
    {.expr = "!0",          .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "!1",          .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
+   // [50]
    {.expr = "!BOOL0",      .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "!INT23",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 23 ^ 0xffffffff, .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "!!BOOL0",     .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [45]
    {.expr = "~42",         .ret_x = JAMC_SUCCESS,       .res_x = 42 ^ 0xffffffff, .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "~0",          .ret_x = JAMC_SUCCESS,       .res_x = 0xffffffff,      .typ_x = JAM_INTEGER_EXPR,    },
+   // [55]
    {.expr = "~1",          .ret_x = JAMC_SUCCESS,       .res_x = 0xfffffffe,      .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "~BOOL0",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "~INT23",      .ret_x = JAMC_SUCCESS,       .res_x = 23 ^ 0xffffffff, .typ_x = JAM_INTEGER_EXPR,    },
-   // [50]
    {.expr = "~~42",        .ret_x = JAMC_SUCCESS,       .res_x = 42,              .typ_x = JAM_INTEGER_EXPR,    },
    // P14-P16: prec 2  binary ops *, /, %
    {.expr = "2*3",         .ret_x = JAMC_SUCCESS,       .res_x = 6,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [60]
    {.expr = "2*INT23",     .ret_x = JAMC_SUCCESS,       .res_x = 46,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "INT23*2",     .ret_x = JAMC_SUCCESS,       .res_x = 46,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "INT23*INT23", .ret_x = JAMC_SUCCESS,       .res_x = 529,             .typ_x = JAM_INTEGER_EXPR,    },
-   // [55]
    {.expr = "-2*3",        .ret_x = JAMC_SUCCESS,       .res_x = -6,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2*-3",        .ret_x = JAMC_SUCCESS,       .res_x = -6,              .typ_x = JAM_INTEGER_EXPR,    },
+   // [65]
    {.expr = "1*BOOL0",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL0*2",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL0*BOOL1", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [60]
    {.expr = "INT23*BOOL0", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL1*INT23", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
+   // [70]
    {.expr = "2*3*4",       .ret_x = JAMC_SUCCESS,       .res_x = 24,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "6/2",         .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "6/4",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
-   // [65]
    {.expr = "6/0",         .ret_x = JAMC_DIVIDE_BY_ZERO,.res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "6%2",         .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [75]
    // P12-P13: prec 3  binary ops +, -
    {.expr = "2+3",         .ret_x = JAMC_SUCCESS,       .res_x = 5,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2147483647+1",.ret_x = JAMC_INTEGER_OVERFLOW, .res_x = 0xdead,       .typ_x = 0xdead,              },
    {.expr = "2+INT23",     .ret_x = JAMC_SUCCESS,       .res_x = 25,              .typ_x = JAM_INTEGER_EXPR,    },
-   // [70]
    {.expr = "INT23+2",     .ret_x = JAMC_SUCCESS,       .res_x = 25,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "INT23+INT23", .ret_x = JAMC_SUCCESS,       .res_x = 46,              .typ_x = JAM_INTEGER_EXPR,    },
+   // [80]
    {.expr = "2+3+4",       .ret_x = JAMC_SUCCESS,       .res_x = 9,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2*3+4",       .ret_x = JAMC_SUCCESS,       .res_x = 10,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2+3*4",       .ret_x = JAMC_SUCCESS,       .res_x = 14,              .typ_x = JAM_INTEGER_EXPR,    },
-   // [75]
    {.expr = "2-3",         .ret_x = JAMC_SUCCESS,       .res_x = -1,              .typ_x = JAM_INTEGER_EXPR,    },
 #ifdef __code_model_32__
    {.expr = "0-2147483648",.ret_x = JAMC_SUCCESS,       .res_x = -2147483647,     .typ_x = JAM_INTEGER_EXPR,    },
 #else
    {.expr = "0-2147483648",.ret_x = JAMC_SUCCESS,       .res_x = -2147483648,     .typ_x = JAM_INTEGER_EXPR,    },
 #endif
+   // [85]
    {.expr = "S32MIN-1",    .ret_x = JAMC_INTEGER_OVERFLOW, .res_x = 0xdead,       .typ_x = 0xdead,              },
    // P22-P23: prec 4  binary ops <<, >>
    {.expr = "1<<0",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<30",       .ret_x = JAMC_SUCCESS,       .res_x = 1073741824,      .typ_x = JAM_INTEGER_EXPR,    },
-   // [80]
    {.expr = "1<<31",       .ret_x = JAMC_SUCCESS,       .res_x = -2147483648,     .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<32",       .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [90]
    {.expr = "1<<33",       .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<34",       .ret_x = JAMC_SUCCESS,       .res_x = 4,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<62",       .ret_x = JAMC_SUCCESS,       .res_x = 1073741824,      .typ_x = JAM_INTEGER_EXPR,    },
-   // [85]
    {.expr = "1<<63",       .ret_x = JAMC_SUCCESS,       .res_x = -2147483648,     .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<1<<2",     .ret_x = JAMC_SUCCESS,       .res_x = 8,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [95]
    {.expr = "1+1<<2",      .ret_x = JAMC_SUCCESS,       .res_x = 8,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<2+3",      .ret_x = JAMC_SUCCESS,       .res_x = 32,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2>>1",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
-   // [90]
    {.expr = "2>>2",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2>>4",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [10]
    {.expr = "S32MIN>>1",   .ret_x = JAMC_SUCCESS,       .res_x = -1073741824,/*?*/.typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "S32MIN>>2",   .ret_x = JAMC_SUCCESS,       .res_x = -536870912, /*?*/.typ_x = JAM_INTEGER_EXPR,    },
    // P26-P29: prec 5  binary ops >, <, >=, <=
    {.expr = "2<4",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [95]
    {.expr = "0<4",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "1<4",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
+   // [105]
    {.expr = "1<4<2",       .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "1<<1<4",      .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "1<1<<4",      .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [100]
    {.expr = "1<4",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "2<=4",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
+   // [110]
    {.expr = "2>4",         .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "2>=4",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    // P24-P25: prec 6  binary ops ==, !=
    {.expr = "2==2",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [105]
    {.expr = "2==2==2",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "2<3==2",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
+   // [115]
    {.expr = "2==2<3",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "1<<1==2",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "2==1<<1",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [110]
    {.expr = "2!=2",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    // P17: prec 7  binary ops &
    {.expr = "3&1",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [120]
    {.expr = "3&0",         .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1&3",         .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "0&3",         .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
-   // [115]
    {.expr = "3&BOOL1",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL1&3",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
+   // [125]
    {.expr = "BOOL1&BOOL0", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "3&7==7",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "4==4&3",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [120]
    {.expr = "7&3&2",       .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1<<1&3",      .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [130]
    {.expr = "4&1<<2",      .ret_x = JAMC_SUCCESS,       .res_x = 4,               .typ_x = JAM_INTEGER_EXPR,    },
    // P19: prec 8  binary ops ^
    {.expr = "3^1",         .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "3^0",         .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
-   // [125]
    {.expr = "1^3",         .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "0^3",         .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [135]
    {.expr = "3^BOOL1",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL1^3",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL1^BOOL0", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [130]
    {.expr = "7^3^12",      .ret_x = JAMC_SUCCESS,       .res_x = 8,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "7^4&12",      .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [140]
    {.expr = "7&3^12",      .ret_x = JAMC_SUCCESS,       .res_x = 15,              .typ_x = JAM_INTEGER_EXPR,    },
    // P18: prec 9  binary ops |
    {.expr = "1|2",         .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "0|2",         .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
-   // [135]
    {.expr = "2|1",         .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "2|0",         .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [145]
    {.expr = "3|BOOL1",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL1|3",     .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "BOOL1|BOOL0", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [140]
    {.expr = "1|2|4",       .ret_x = JAMC_SUCCESS,       .res_x = 7,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "1|2^4",       .ret_x = JAMC_SUCCESS,       .res_x = 7,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [150]
    {.expr = "1^2|4",       .ret_x = JAMC_SUCCESS,       .res_x = 7,               .typ_x = JAM_INTEGER_EXPR,    },
    // P20: prec 10 binary ops &&
    {.expr = "1&&1",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "1&&0",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [145]
    {.expr = "0&&1",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "0&&0",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
+   // [155]
    {.expr = "BOOL1&&BOOL1",.ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "BOOL1&&BOOL0",.ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "BOOL0&&BOOL1",.ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [150]
    {.expr = "BOOL0&&BOOL0",.ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "2&&1",        .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
+   // [160]
    {.expr = "1&&2",        .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "2&&2",        .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "1&&1&&1",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [155]
    {.expr = "1|1&&1",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "1&&1|1",      .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
+   // [165]
    // P21: prec 11 binary ops ||
    {.expr = "1||1",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "1||0",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "0||1",        .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [160]
    {.expr = "0||0",        .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "BOOL1||BOOL1",.ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
+   // [170]
    {.expr = "BOOL1||BOOL0",.ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "BOOL0||BOOL1",.ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "BOOL0||BOOL0",.ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [165]
    {.expr = "2||1",        .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "1||2",        .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
+   // [175]
    {.expr = "2||2",        .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "1||1||0",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "1&&1||0",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
-   // [170]
    {.expr = "1||1&&0",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    {.expr = "1&&1==1",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
+   // [180]
    {.expr = "1==1&&1",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,    },
    // P30: ABS function
    {.expr = "ABS(3)",      .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "ABS(-3)",     .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
-   // [175]
    {.expr = "-ABS(3)",     .ret_x = JAMC_SUCCESS,       .res_x = -3,              .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "-ABS(3)+3",   .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [185]
    // P31: INT function
    {.expr = "INT($BOOL0)",  .ret_x = JAMC_SUCCESS,      .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "INT($BOOL1)",  .ret_x = JAMC_SUCCESS,      .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "INT($INT23)",  .ret_x = JAMC_SUCCESS,      .res_x = 23,              .typ_x = JAM_INTEGER_EXPR,    },
    // P32: LOG2 function
-   // [180]
    {.expr = "LOG2(4)",     .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "LOG2(5)",     .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [190]
    {.expr = "LOG2(6)",     .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "LOG2(7)",     .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "LOG2(8)",     .ret_x = JAMC_SUCCESS,       .res_x = 3,               .typ_x = JAM_INTEGER_EXPR,    },
    // P33: SQRT function
-   // [185]
    {.expr = "SQRT(0)",     .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "SQRT(1)",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [195]
    {.expr = "SQRT(2)",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "SQRT(3)",     .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "SQRT(4)",     .ret_x = JAMC_SUCCESS,       .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    // P34: CEIL function
-   // [190]
    {.expr = "CEIL(5)",       .ret_x = JAMC_SUCCESS,     .res_x = 5,               .typ_x = JAM_INTEGER_EXPR,    },
    {.expr = "CEIL(6/4)",     .ret_x = JAMC_SUCCESS,     .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
+   // [200]
    {.expr = "CEIL(SQRT(3))", .ret_x = JAMC_SUCCESS,     .res_x = 2,               .typ_x = JAM_INTEGER_EXPR,    },
    // P35: FLOOR function
    {.expr = "FLOOR(5)",       .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,       .typ_x = 0xdead,              },
    {.expr = "FLOOR(LOG2(4))", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,       .typ_x = 0xdead,              },
-   // [195]
    {.expr = "FLOOR(LOG2(5))", .ret_x = JAMC_TYPE_MISMATCH, .res_x = 0xdead,       .typ_x = 0xdead,              },
    // P36: array
    {.expr = "BOOLAFFE_[0]",  .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,  },
+   // [205]
    {.expr = "BOOLAFFE_[1]",  .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,  },
    {.expr = "BOOLAFFE_[62]", .ret_x = JAMC_SUCCESS,       .res_x = 0,               .typ_x = JAM_BOOLEAN_EXPR,  },
    {.expr = "BOOLAFFE_[63]", .ret_x = JAMC_SUCCESS,       .res_x = 1,               .typ_x = JAM_BOOLEAN_EXPR,  },
-   // [200]
    {.expr = "INTA5A5_[0]",   .ret_x = JAMC_SUCCESS,       .res_x = 0xa5a50000,      .typ_x = JAM_INTEGER_EXPR,  },
    {.expr = "INTA5A5_[1]",   .ret_x = JAMC_SUCCESS,       .res_x = 0xa5a50001,      .typ_x = JAM_INTEGER_EXPR,  },
+   // [210]
    {.expr = "BOOLAFFE_[-1]", .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "BOOLAFFE_[64]", .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "BOOL_BAFF[-1]", .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
-   // [205]
    {.expr = "BOOL_BAFF[16]", .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "INTA5A5_[-1]",  .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
+   // [215]
    {.expr = "INTA5A5_[2]",   .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "INT_5A5A[-1]",  .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "INT_5A5A[3]",   .ret_x = JAMC_BOUNDS_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,            },
    // syntax errors seem to cause failures in subsequent good test steps, put them at the end of the test cases
-   // [210]
    {.expr = "INTA5A5_[]",     .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "BOOLAFFE_[1..2]",.ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
+   // [220]
    {.expr = "BOOLAFFE_[]",    .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "INT(0)",         .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "INT(1)",         .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
-   // [215]
    {.expr = "INT(42)",        .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
    {.expr = "INT(23+42)",     .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,          .typ_x = 0xdead,            },
+   // [225]
    {.expr = "INT($BOOLAFFE_[])",     .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,   .typ_x = 0xdead,            },
    {.expr = "INT($BOOLAFFE_[2..3])", .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,   .typ_x = 0xdead,            },
    // literal boolean array - bit string
    {.expr = "#10001",                .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,   .typ_x = 0xdead,            },
-   // [220]
    {.expr = "INT(#10001[0])",        .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,   .typ_x = 0xdead,            },
    {.expr = "INT(#10001[0..2])",     .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,   .typ_x = 0xdead,            },
+   // [230]
    {.expr = "INT(#10001[])",         .ret_x = JAMC_SYNTAX_ERROR, .res_x = 0xdead,   .typ_x = 0xdead,            },
    // array identifiers
    {.expr = "BOOLAFFE_",   .ret_x = JAMC_SYNTAX_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,              },
    {.expr = "INT_5A5A",    .ret_x = JAMC_SYNTAX_ERROR,  .res_x = 0xdead,          .typ_x = 0xdead,              },
-   // [225]
 #ifdef CORE_DUMP
    // literal boolean array - hex string
    {.expr = "$42ff",       .ret_x = JAMC_SYNTAX_ERROR,  .res_x = 10001,           .typ_x = JAM_INTEGER_EXPR,    },
@@ -442,6 +460,7 @@ struct sEvalExpSpec EvalSpecAry[EVAL_EXP_NRELM]
 #ifdef FP_EXCEPTION
    {.expr = "6%0",         .ret_x = JAMC_DIVIDE_BY_ZERO,.res_x = 0xdead,          .typ_x = 0xdead,              },
 #endif
+   // [235]
 };
 //============================================================================
 // function prototypes
