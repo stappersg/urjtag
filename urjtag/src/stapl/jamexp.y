@@ -1389,168 +1389,133 @@ JAM_RETURN_TYPE urj_jam_evaluate_expression
 }
 }
 
+%left "||"
+%left "&&"
+%left '|'
+%left '^'
+%left '&'
+%left "==" "!="
+%left '>' '<' ">=" "<="
+%left "<<" ">>"
+%left '+' '-'
+%left '*' '/' '%'
+%precedence UNARY_OP // unary '+', '-', '!', '~'
+
 %% // Grammar rules
 
 // grammar start symbol
-stapl_expr: /*P1*/ logical_or_expr {
+stapl_expr: /*P1*/ expr {
    urj_jam_parse_value = $1.val;
    urj_jam_expr_type = $1.type;
 }
 ;
-pound_expr: /*P2*/ '#' "VALUE"[right] {
+int_param: /*P2*/ '#' expr[right] {
    $$ = CALC (POUND, $right, NULL_EXP);
 }
-;
-dollar_expr: /*P3*/ '$' "VALUE"[right] {
+| /*P3*/ '$' expr[right] {
    $$ = CALC (DOLLAR, $right, NULL_EXP);
 }
-| '$' array_expr[right] {
-   $$ = CALC (DOLLAR, $right, NULL_EXP);
-}
-;
-array_range: /*P4*/ "ARRAY" '[' logical_or_expr[left] ".." logical_or_expr[right] ']' {
+| /*P4*/ "ARRAY" '[' expr[left] ".." expr[right] ']' {
    // ??: ARRAY seems to have been cached somewhere
    $$ = CALC (ARRAY_RANGE, $left, $right);
 }
-;
-array_all: /*P5*/ "ARRAY"[left] '[' ']' {
+| /*P5*/ "ARRAY"[left] '[' ']' {
    $$ = CALC (ARRAY_ALL, $left, NULL_EXP);
 }
 ;
 primary_expr: /*P6*/ "VALUE"
-| /*P7*/ '(' logical_or_expr[mid] ')' {
+| /*P7*/ '(' expr[mid] ')' {
    $$ = $mid;
 }
 | array_expr
-| abs_expr
-| ceil_expr
-| floor_expr
-| int_expr
-| log2_expr
-| sqrt_expr
 ;
-unary_expr: primary_expr
-| /*P8*/ '+' unary_expr[right] {
+expr: primary_expr
+| /*P8*/ '+' expr[right] %prec UNARY_OP {
    $$ = $right;
 }
-| /*P9*/ '-' unary_expr[right] {
+| /*P9*/ '-' expr[right] %prec UNARY_OP {
    $$ = CALC (UMINUS, $right, NULL_EXP);
 }
-| /*P10*/ '!' unary_expr[right] {
+| /*P10*/ '!' expr[right] %prec UNARY_OP {
    $$ = CALC (NOT, $right, NULL_EXP);
 }
-| /*P11*/ '~' unary_expr[right] {
+| /*P11*/ '~' expr[right] %prec UNARY_OP {
    $$ = CALC (BITWISE_NOT, $right, NULL_EXP);
 }
-;
-additive_expr: multiplicative_expr
-| /*P12*/ additive_expr[left] '+' multiplicative_expr[right] {
+| /*P12*/ expr[left] '+' expr[right] {
    $$ = CALC (ADD, $left, $right);
 }
-| /*P13*/ additive_expr[left] '-' multiplicative_expr[right] {
+| /*P13*/ expr[left] '-' expr[right] {
    $$ = CALC (SUB, $left, $right);
 }
-;
-multiplicative_expr: unary_expr
-| /*P14*/ multiplicative_expr[left] '*' unary_expr[right] {
+| /*P14*/ expr[left] '*' expr[right] {
    $$ = CALC (MULT, $left, $right);
 }
-| /*P15*/ multiplicative_expr[left] '/' unary_expr[right] {
+| /*P15*/ expr[left] '/' expr[right] {
    $$ = CALC (DIV, $left, $right);
 }
-| /*P16*/ multiplicative_expr[left] '%' unary_expr[right] {
+| /*P16*/ expr[left] '%' expr[right] {
    $$ = CALC (MOD, $left, $right);
 }
-;
-bitand_expr: equality_expr
-| /*P17*/ bitand_expr[left] '&' equality_expr[right] {
+| /*P17*/ expr[left] '&' expr[right] {
    $$ = CALC (BITWISE_AND, $left, $right);
 }
-;
-bitor_expr: bitxor_expr
-| /*P18*/ bitor_expr[left] '|' bitxor_expr[right] {
+| /*P18*/ expr[left] '|' expr[right] {
    $$ = CALC (BITWISE_OR, $left, $right);
 }
-;
-bitxor_expr: bitand_expr
-| /*P19*/ bitxor_expr[left] '^' bitand_expr[right] {
+| /*P19*/ expr[left] '^' expr[right] {
    $$ = CALC (BITWISE_XOR, $left, $right);
 }
-;
-logical_and_expr: bitor_expr
-| /*P20*/ logical_and_expr[left] "&&" bitor_expr[right] {
+| /*P20*/ expr[left] "&&" expr[right] {
    $$ = CALC (AND, $left, $right);
 }
-;
-logical_or_expr: logical_and_expr
-| /*P21*/ logical_or_expr[left] "||" logical_and_expr[right] {
+| /*P21*/ expr[left] "||" expr[right] {
    $$ = CALC (OR, $left, $right);
 }
-;
-shift_expr: additive_expr
-| /*P22*/ shift_expr[left] "<<" additive_expr[right] {
+| /*P22*/ expr[left] "<<" expr[right] {
    $$ = CALC (LEFT_SHIFT, $left, $right);
 }
-| /*P23*/ shift_expr[left] ">>" additive_expr[right] {
+| /*P23*/ expr[left] ">>" expr[right] {
    $$ = CALC (RIGHT_SHIFT, $left, $right);
 }
-;
-equality_expr: relational_expr
-| /*P24*/ equality_expr[left] "==" relational_expr[right] {
+| /*P24*/ expr[left] "==" expr[right] {
    $$ = CALC (EQUALITY, $left, $right);
 }
-| /*P25*/ equality_expr[left] "!=" relational_expr[right] {
+| /*P25*/ expr[left] "!=" expr[right] {
    $$ = CALC (INEQUALITY, $left, $right);
 }
-;
-relational_expr: shift_expr
-| /*P26*/ relational_expr[left] '>' shift_expr[right] {
+| /*P26*/ expr[left] '>' expr[right] {
    $$ = CALC (GREATER_THAN, $left, $right);
 }
-| /*P27*/ relational_expr[left] '<' shift_expr[right] {
+| /*P27*/ expr[left] '<' expr[right] {
    $$ = CALC (LESS_THAN, $left, $right);
 }
-| /*28*/ relational_expr[left] ">=" shift_expr[right] {
+| /*28*/ expr[left] ">=" expr[right] {
    $$ = CALC (GREATER_OR_EQUAL, $left, $right);
 }
-| /*P29*/ relational_expr[left] "<=" shift_expr[right] {
+| /*P29*/ expr[left] "<=" expr[right] {
    $$ = CALC (LESS_OR_EQUAL, $left, $right);
 }
-;
-abs_expr: /*P30*/ "ABS" '(' logical_or_expr[mid] ')' {
+| /*P30*/ "ABS" '(' expr[mid] ')' {
    $$ = CALC (ABS, $mid, NULL_EXP);
 }
-;
-int_expr: /*P31*/ "INT" '(' pound_expr[mid] ')' {
+| /*P31*/ "INT" '(' int_param[mid] ')' {
    $$ = CALC (INT, $mid, NULL_EXP);
 }
-| "INT" '(' dollar_expr[mid] ')' {
-   $$ = CALC (INT, $mid, NULL_EXP);
-}
-| "INT" '(' array_range[mid] ')' {
-   $$ = CALC (INT, $mid, NULL_EXP);
-}
-| "INT" '(' array_all[mid] ')' {
-   $$ = CALC (INT, $mid, NULL_EXP);
-}
-;
-log2_expr: /*P32*/ "LOG2" '(' logical_or_expr[mid] ')' {
+| /*P32*/ "LOG2" '(' expr[mid] ')' {
    $$ = CALC (LOG2, $mid, NULL_EXP);
 }
-;
-sqrt_expr: /*P33*/ "SQRT" '(' logical_or_expr[mid] ')' {
+| /*P33*/ "SQRT" '(' expr[mid] ')' {
    $$ = CALC (SQRT, $mid, NULL_EXP);
 }
-;
-ceil_expr: /*P34*/ "CEIL" '(' logical_or_expr[mid] ')' {
+| /*P34*/ "CEIL" '(' expr[mid] ')' {
    $$ = CALC (CIEL, $mid, NULL_EXP);
 }
-;
-floor_expr: /*P35*/ "FLOOR" '(' logical_or_expr[mid] ')' {
+| /*P35*/ "FLOOR" '(' expr[mid] ')' {
    $$ = CALC (FLOOR, $mid, NULL_EXP);
 }
 ;
-array_expr: /*P36*/ "ARRAY"[left] '[' logical_or_expr[right] ']' {
+array_expr: /*P36*/ "ARRAY"[left] '[' expr[right] ']' {
    $$ = CALC (ARRAY, $left, $right);
 }
 ;
